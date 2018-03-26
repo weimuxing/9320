@@ -1,0 +1,45 @@
+<MasterProject Profile="FLI8532" Version="9">
+    <ReadOnly-Projects>
+        <ReadOnly-Project Path="ReadOnly.gpr-ro"/>
+    </ReadOnly-Projects>
+    
+    <Upgrade-Projects>
+        <Upgrade-Project Path="CreationTime.gpr-up"/>
+    </Upgrade-Projects>
+    
+    <Compatibility>
+        <Version Value="1" Path="Version.1/script.xml"/>
+        <Version Value="2" Path="Version.2/script.xml"/>
+        <Version Value="3" Path="Version.3/script.xml"/>
+        <Version Value="4" Path="Version.4/script.xml"/>
+        <Version Value="5" Path="Version.5/script.xml"/>
+        <Version Value="6" Path="Version.6/script.xml"/>
+        <Version Value="7" Path="Version.7/script.xml"/>
+        <Version Value="8" Path="Version.8/script.xml"/>
+        <Version Value="9" Path="Version.9/script.xml"/>
+    </Compatibility>
+
+    <Conversion>
+        <FLI8125>
+            <Version Value="1" Path="convert.FLI8125/Version.1/Script.xml"/>
+        </FLI8125>
+        <gm16xx>
+            <Version Value="1" Path="convert.gm16xx/Version.1/Script.xml"/>
+        </gm16xx>
+        <gm16xxTV>
+            <Version Value="1" Path="convert.gm16xxTV/Version.1/Script.xml"/>
+        </gm16xxTV>
+        <gm52xx>
+            <Version Value="1" Path="convert.gm52xx/Version.1/Script.xml"/>
+        </gm52xx>
+        <gm59xx>
+            <Version Value="1" Path="convert.gm59xx/Version.1/Script.xml"/>
+        </gm59xx>
+        <gm56xx>
+            <Version Value="1" Path="convert.gm56xx/Version.1/Script.xml"/>
+        </gm56xx>
+        <Zan3>
+            <Version Value="1" Path="convert.Zan3/Version.1/Script.xml"/>
+        </Zan3>
+    </Conversion>
+</MasterProject>

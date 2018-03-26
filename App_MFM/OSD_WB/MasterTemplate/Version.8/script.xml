@@ -1,0 +1,87 @@
+<Upgrade>
+	<Upgrade-Projects>
+		<Upgrade-Project Path="upgrade.gpr-up"/>
+	</Upgrade-Projects>
+	
+	<RenameEntries>
+		<Classes>
+			<Entry Name="ClassToBeRenamed" NewName="NewClassName"/>
+			<Entry Name="NewClassName" NewName="NewClassName2"/>
+			<Entry Name="NewClassName2" NewName="NewClassName"/>
+		</Classes>
+
+		<Properties>
+			<Entry Name="ClassName.PropertyToBeRenamed" NewName="NewPropertyName"/>
+		</Properties>
+
+		<Methods>
+			<Entry Name="ClassName.MethodToBeRenamed" NewName="NewMethodName"/>
+		</Methods>
+
+		<BuildConditions>
+			<Entry Name="BuildConditionToBeRenamed" NewName="NewBuildConditionName"/>
+		</BuildConditions>
+
+		<Events>
+			<Entry Name="EventToBeRenamed" NewName="EventObjectName"/>
+		</Events>
+		
+		<Functions>
+			<Entry Name="FunctionToBeRenamed" NewName="FunctionObjectName"/>
+		</Functions>
+
+		<Keypads>
+			<Entry Name="KeypadToBeRenamed" NewName="KeypadObjectName"/>
+		</Keypads>
+
+		<RamSelectors>
+			<Entry Name="RamSelectorToBeRenamed" NewName="RamSelectorObjectName"/>
+		</RamSelectors>
+
+		<Timers>
+			<Entry Name="TimerToBeRenamed" NewName="TimerObjectName"/>
+		</Timers>
+		
+	</RenameEntries>
+	
+	<RemoveEntries>
+		<Classes>
+			<Entry Name="ClassToBeRemoved"/>
+		</Classes>
+
+		<Properties>
+			<Entry Name="ClassName.PropertyToBeRemoved"/>
+		</Properties>
+
+		<Methods>
+			<Entry Name="ClassName.MethodToBeRemoved"/>
+		</Methods>
+
+		<BuildConditions>
+			<Entry Name="BuildConditionToBeRemoved"/>
+		</BuildConditions>
+
+		<Events>
+			<Entry Name="EventToBeRemoved"/>
+		</Events>
+		
+		<Functions>
+			<Entry Name="FunctionToBeRemoved"/>
+		</Functions>
+
+		<Keypads>
+			<Entry Name="KeypadToBeRemoved"/>
+		</Keypads>
+
+		<RamVariables>
+		</RamVariables>
+
+		<RamSelectors>
+			<Entry Name="RamSelectorToBeRemoved"/>
+		</RamSelectors>
+
+		<Timers>
+			<Entry Name="TimerToBeRemoved"/>
+		</Timers>
+	</RemoveEntries>
+</Upgrade>

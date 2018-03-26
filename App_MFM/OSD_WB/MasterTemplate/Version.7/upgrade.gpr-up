@@ -1,0 +1,3263 @@
+<Genesis-Workbench-Project Version="6" Chip-Name="FLI8532" MasterProjectVersion="0" SepMode="0">
+<osd>
+<BuildConditions RemovedUIDsPresent="true">
+<Entries/>
+</BuildConditions>
+<Events RemovedUIDsPresent="true">
+<Entries>
+<Event Name="OE_AspectRatioUpdate" UID="{990E40F8-A419-42c5-92D8-2C7CAE803B52}" Desc="AspectRatio is to be updated" Kind="3" AllowChangeState="true" Parentage="2"/>
+<Event Name="OE_ADCCalibrationCompleted" UID="{B27C6AC7-5608-428d-B30C-4CEED168A6A3}" Desc="Informs OSD to update displayed ADC calibration parameters" Kind="3" AllowChangeState="true" Parentage="2"/>
+</Entries>
+</Events>
+<Functions RemovedUIDsPresent="true">
+<Entries/>
+</Functions>
+<RamSelectors RemovedUIDsPresent="true">
+<Entries>
+<RamSelector Name="InputPortList" UID="{FE3F2B31-1D95-4ef6-98F5-09278E057ECB}" Parentage="2">
+<Positions>
+<Position Name="InputPort_1" UID="{E944E303-BEDD-4739-95F1-96B201EA85B3}" Alias=""/>
+<Position Name="InputPort_2" UID="{763E0C0E-A6CD-48c5-90A9-D61FDC1B9BE8}" Alias=""/>
+<Position Name="InputPort_3" UID="{9B192AF9-8520-4c63-9DD9-9E8D0F04372E}" Alias=""/>
+<Position Name="InputPort_4" UID="{2F1475A8-441F-4822-A0CB-2D74481DE2E8}" Alias=""/>
+<Position Name="InputPort_5" UID="{3CF74453-5741-4988-B64D-87D544A51ADD}" Alias=""/>
+</Positions>
+</RamSelector>
+<RamSelector Name="ADCOffsetGainList" UID="{B00587F3-E5C1-4589-9140-91F20A024DC3}" Parentage="2">
+<Positions>
+<Position Name="Offset1_1" UID="{29572CB4-565A-4cef-888F-89A19E2CEB2E}" Alias="Offset1_1"/>
+<Position Name="Offset1_2" UID="{66DA98AA-8263-4f3c-8D12-B00956E10442}" Alias="Offset1_2"/>
+<Position Name="Offset1_3" UID="{7A968C27-4ECA-446a-8D0E-4695B6DCCAD4}" Alias="Offset1_3"/>
+<Position Name="Offset2_1" UID="{1ECECADB-9D53-4e85-A218-6DC51CB50ECE}" Alias="Offset2_1"/>
+<Position Name="Offset2_2" UID="{00B73052-C9DF-4986-8FF8-19B56A7D8142}" Alias="Offset2_2"/>
+<Position Name="Offset2_3" UID="{3953B10C-21BD-4eb6-92B9-B1EEADD8E65D}" Alias="Offset2_3"/>
+<Position Name="Gain_1" UID="{F6FFB04F-7D22-422a-89FB-4EA24CE54D75}" Alias="Gain_1"/>
+<Position Name="Gain_2" UID="{74A9F721-D2A0-4f69-AEB1-772C1C200352}" Alias="Gain_2"/>
+<Position Name="Gain_3" UID="{7C8C2DF8-6D3B-47f9-B505-63F51EBB6B4E}" Alias="Gain_3"/>
+</Positions>
+</RamSelector>
+<RamSelector Name="BlockedChannelList" UID="{5AA5FA7C-F8EF-4dd7-994C-EDC7DC192487}" Parentage="2">
+<Positions>
+<Position Name="BlockedChannel_1" UID="{A8ECBD65-D9A8-4846-9180-679338B19A4A}" Alias="BlockedChannel_1"/>
+<Position Name="BlockedChannel_2" UID="{40AB263A-86B8-42fe-8312-7A8C0EF0CA99}" Alias="BlockedChannel_2"/>
+<Position Name="BlockedChannel_3" UID="{FAF06D31-6ACF-45b2-9AC0-EC41EF420F9D}" Alias="BlockedChannel_3"/>
+<Position Name="BlockedChannel_4" UID="{FD462C02-AE02-4905-9B74-0720304AF85D}" Alias="BlockedChannel_4"/>
+<Position Name="BlockedChannel_5" UID="{75A23655-77C5-4bc1-937A-ACC267A5BB9D}" Alias="BlockedChannel_5"/>
+<Position Name="BlockedChannel_6" UID="{F8B83C53-A86A-42b8-8475-B9F0FC461BB2}" Alias="BlockedChannel_6"/>
+<Position Name="BlockedChannel_7" UID="{6CB49C78-92FB-4ff6-978F-F69E6ED4F11B}" Alias="BlockedChannel_7"/>
+<Position Name="BlockedChannel_8" UID="{2040D8A1-5E87-494e-A533-5249DD729A9F}" Alias="BlockedChannel_8"/>
+<Position Name="BlockedChannel_9" UID="{D09A987C-9461-4cdf-9BDD-1F7787025A43}" Alias="BlockedChannel_9"/>
+<Position Name="BlockedChannel_10" UID="{1E7BFF01-7B9D-45ac-A155-8D659DB15BFB}" Alias="BlockedChannel_10"/>
+</Positions>
+</RamSelector>
+</Entries>
+</RamSelectors>
+<Keypads RemovedUIDsPresent="true">
+<Entries/>
+</Keypads>
+<Keys RemovedUIDsPresent="true">
+<Entries/>
+</Keys>
+<Keystrokes RemovedUIDsPresent="true">
+<Entries/>
+</Keystrokes>
+<Classes RemovedUIDsPresent="true">
+<Entries>
+<Class Name="StateTree" UID="{178C0F57-58E3-430c-AAAC-53371AD26C29}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Control" UID="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}" Group="" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="SimpleControl" UID="{15ACA86D-D178-4475-B8C5-2915615194FF}" Group="" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="BaseTile" UID="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}" Desc="BaseTile" Group="" Image="Tile.bmp" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="ControlRect" UID="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}" Group="" Image="" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{FC5271F3-26D1-4829-8FC5-ABD47549FD66}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Erase" UID="{3A521991-6FCF-4c43-BAA3-D73ED58CF8E5}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DStaticTextButton" UID="{BB396B8E-60B1-4745-B548-0660433787EB}" Desc="Text Button" Group="TextControls" Image="Text Button.bmp" Virtual="false" Parentage="2" Base="{3CEDC15E-FC81-4c8b-8C96-075DA5DB5DEF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="ColorState2">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_2" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_3" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_4" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_5" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_6" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_7" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_8" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawOption1DStaticTextButton">
+<Function-Object Name="Draw" UID="{C66011D8-65FC-4a7f-A186-47A79A8A4C48}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{1643E8F2-4BB1-45e3-8759-13D2A88C7DFA}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedOption1DStaticTextButton">
+<Function-Object Name="DrawSelected" UID="{0F7ABBB3-1A52-4bd6-A302-B9A0E83AAC23}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledText">
+<Function-Object Name="DrawDisabled" UID="{F29F3215-A08E-445d-8274-0C7F60A00FE5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{9C2B953B-C95A-4503-A564-6DE8AAABC14A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption1" UID="{2FEF0834-77BE-4b7d-A73F-248FBFB1ABDF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption2" UID="{ACE20A73-3E63-4032-AF88-B1794707BD9E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption3" UID="{26E3921D-358E-4876-8C77-E2D4536FF7EE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption4" UID="{B699CF76-9E61-44c3-AB12-0A9B91B4975D}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption5" UID="{438E0EC6-39ED-4b02-B76F-058808FBC26A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption6" UID="{2ABAA622-85FF-486c-B2BD-59E517063383}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption7" UID="{42633B2E-FEC7-41a1-8E73-E2555D4D7CF3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption8" UID="{6CF1ED6E-DB04-4116-8EC2-2A8E6F830600}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption1" UID="{7CA7C9F8-D696-4195-95AA-1509AF98B3AB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption2" UID="{8A4C6FE6-4E00-4f79-B910-B73CC0E7213E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption3" UID="{E4079835-E914-41f9-A158-501E9E36A683}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption4" UID="{8989A39C-DD8F-440a-8C8B-F493FE2B5507}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption5" UID="{DB45EBAC-F887-4246-8A53-1F78D411FB3F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption6" UID="{D012597D-1C36-4528-9DA2-6C57020DEA1C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption7" UID="{E4782EF7-62CE-4be8-885B-9047EEECC1FF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption8" UID="{6D870A28-5659-4953-BB7C-7FABBDEAB6C8}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DStaticTextButtonExt" UID="{257B6290-3E61-4c56-A9DB-382833837A10}" Desc="Text Button" Group="TextControls" Image="Text Button.bmp" Virtual="false" Parentage="2" Base="{3CEDC15E-FC81-4c8b-8C96-075DA5DB5DEF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="ColorState2">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_2" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_3" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_4" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_5" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_6" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_7" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_8" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_9" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_10" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_11" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_12" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_13" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_14" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_15" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_16" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_17" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_18" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_19" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_20" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_21" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_22" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_23" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_24" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_25" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_26" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_27" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_28" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_29" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_30" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_31" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_32" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawOption1DStaticTextButton">
+<Function-Object Name="Draw" UID="{A5CF2E90-1AFD-4940-8BC6-B505CFA80EC7}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{FC4CE408-0ABD-4b3a-9CBB-9C68E086CEAD}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedOption1DStaticTextButton">
+<Function-Object Name="DrawSelected" UID="{0CDC281F-CD9B-4a14-B7C8-843E302BC4E5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledText">
+<Function-Object Name="DrawDisabled" UID="{8B19BBA1-5C91-4d81-9FBF-FC297FF5C79E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{BB9147BC-F594-431b-BABE-BFA1361AFAE4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption1DStaticTextExt">
+<Function-Object Name="DrawOption1" UID="{11772CC6-75A0-4fd1-89B2-333FAF322EAF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption4DStaticTextExt">
+<Function-Object Name="DrawOption4" UID="{62D7FB23-8A0B-4a5d-8677-AB34BE640FFD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption5DStaticTextExt">
+<Function-Object Name="DrawOption5" UID="{BFA7EB17-7325-4af3-8CC3-1517413684B9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption6DStaticTextExt">
+<Function-Object Name="DrawOption6" UID="{421557BA-B1B9-4746-8D06-D3D261F8F4BA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption7DStaticTextExt">
+<Function-Object Name="DrawOption7" UID="{3947BF6A-A50A-4620-B2AF-6E60EFAC1433}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption8DStaticTextExt">
+<Function-Object Name="DrawOption8" UID="{25527318-0085-423e-A70A-5DFC404DC077}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption9DStaticTextExt">
+<Function-Object Name="DrawOption9" UID="{8161067F-F666-4712-A3FB-DBE9961DF7A6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption10DStaticTextExt">
+<Function-Object Name="DrawOption10" UID="{78841289-19B3-4186-B1AD-A5895AEBAD9F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption11DStaticTextExt">
+<Function-Object Name="DrawOption11" UID="{258C0492-4D08-4b0d-B432-260162931E35}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption12DStaticTextExt">
+<Function-Object Name="DrawOption12" UID="{0528FB8A-DF3F-4e01-9385-785F8A2F0F99}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption13DStaticTextExt">
+<Function-Object Name="DrawOption13" UID="{4376AEBA-0646-4ff8-AFF3-978B703FB0A5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption14DStaticTextExt">
+<Function-Object Name="DrawOption14" UID="{EF07C34B-7424-4e58-B664-4BE12571E94A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption15DStaticTextExt">
+<Function-Object Name="DrawOption15" UID="{AE71D336-D7D7-4778-82FE-18F712CA2A6C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption16DStaticTextExt">
+<Function-Object Name="DrawOption16" UID="{F44DE639-3DE6-4be0-95FA-618993BA204A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption17DStaticTextExt">
+<Function-Object Name="DrawOption17" UID="{7FF3A4D8-6794-4ff0-A218-938EFAC59069}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption18DStaticTextExt">
+<Function-Object Name="DrawOption18" UID="{F2FB1B80-40BD-4877-B34D-F554EE094795}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption19DStaticTextExt">
+<Function-Object Name="DrawOption19" UID="{6C35C6A4-36D6-4b7a-BCEF-F6827ED35AF4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption20DStaticTextExt">
+<Function-Object Name="DrawOption20" UID="{8F46CFA0-BF06-4483-9783-1C7AADFC17EE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption21DStaticTextExt">
+<Function-Object Name="DrawOption21" UID="{CB88576F-F316-494a-967C-2E397645B38D}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption22DStaticTextExt">
+<Function-Object Name="DrawOption22" UID="{663B00A6-3BA6-420d-916D-15CB1D32D0D3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption23DStaticTextExt">
+<Function-Object Name="DrawOption23" UID="{B6FB7475-7766-41a4-95FC-A8D97A5C640D}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption24DStaticTextExt">
+<Function-Object Name="DrawOption24" UID="{4C1A5C95-F401-46b2-95D8-013BCFD374B1}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption25DStaticTextExt">
+<Function-Object Name="DrawOption25" UID="{CF423D03-AB8E-4e42-8FA5-A84099271AAB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption26DStaticTextExt">
+<Function-Object Name="DrawOption26" UID="{200917A8-49B5-41d0-902C-FB4EFB5436F9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption27DStaticTextExt">
+<Function-Object Name="DrawOption27" UID="{04F1F973-0CFE-4bf9-97BE-90BDAD61C197}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption28DStaticTextExt">
+<Function-Object Name="DrawOption28" UID="{81AA41FB-E238-481e-B449-EA2B38D9AAB0}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption29DStaticTextExt">
+<Function-Object Name="DrawOption29" UID="{7EE64C71-BFA4-4e23-9EA5-F35F0882D036}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption30DStaticTextExt">
+<Function-Object Name="DrawOption30" UID="{59A88369-FABC-4005-BA80-261061BEE40B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption31DStaticTextExt">
+<Function-Object Name="DrawOption31" UID="{2B92A687-9BF1-40b9-B30F-9633CD101E6A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption32DStaticTextExt">
+<Function-Object Name="DrawOption32" UID="{A6C71E0D-8762-469c-9DCE-0124847801A9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption1DStaticTextButton">
+<Function-Object Name="DrawSelectedOption1" UID="{2DAE9052-A724-4b6a-9366-2B62B9CBE0C3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption2DStaticTextButton">
+<Function-Object Name="DrawSelectedOption2" UID="{56733AA0-25B5-4b6a-839E-2E084977AC40}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption3DStaticTextButton">
+<Function-Object Name="DrawSelectedOption3" UID="{BA861301-C178-4b84-851A-29ACE3A26EB5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption4DStaticTextButton">
+<Function-Object Name="DrawSelectedOption4" UID="{7A7291CA-26F9-4b70-816A-6F3ABCC1D21E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption5DStaticTextButton">
+<Function-Object Name="DrawSelectedOption5" UID="{1E7354B3-9912-4288-9127-CE6EE3A3D033}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption6DStaticTextButton">
+<Function-Object Name="DrawSelectedOption6" UID="{D4A3961B-6276-4371-B3C8-60AA4F70DB6E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption7DStaticTextButton">
+<Function-Object Name="DrawSelectedOption7" UID="{9855A936-550D-4f02-A4A2-139CAC5041A2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption8DStaticTextButton">
+<Function-Object Name="DrawSelectedOption8" UID="{559E60ED-FC8B-4dc9-A347-89D0D49A9D6E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption9DStaticTextButton">
+<Function-Object Name="DrawSelectedOption9" UID="{F58AA292-D9EE-47e0-A3AF-9E9BE46F2A52}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption10DStaticTextButton">
+<Function-Object Name="DrawSelectedOption10" UID="{7B0025ED-9050-48a3-8875-396853D6CCC8}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption11DStaticTextButton">
+<Function-Object Name="DrawSelectedOption11" UID="{54CBC9B9-4685-465f-B689-F8CA119BDDAF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption12DStaticTextButton">
+<Function-Object Name="DrawSelectedOption12" UID="{7E00437A-CFA7-437d-811B-1D7775A8B7A2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption13DStaticTextButton">
+<Function-Object Name="DrawSelectedOption13" UID="{1E83D4EF-05B6-40f4-98FC-03C7A2995788}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption14DStaticTextButton">
+<Function-Object Name="DrawSelectedOption14" UID="{39873F56-6F03-46b2-B9F0-37003C7F2C40}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption15DStaticTextButton">
+<Function-Object Name="DrawSelectedOption15" UID="{E2702387-BC42-44db-8FA8-A0CBEF139334}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption16DStaticTextButton">
+<Function-Object Name="DrawSelectedOption16" UID="{35D070C9-F1C0-449d-BDBD-C33738AAFA25}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption17DStaticTextButton">
+<Function-Object Name="DrawSelectedOption17" UID="{E89FDAC7-7EBE-4188-BB88-73680D07625E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption18DStaticTextButton">
+<Function-Object Name="DrawSelectedOption18" UID="{38042B79-5743-4667-8547-BED4841763B4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption19DStaticTextButton">
+<Function-Object Name="DrawSelectedOption19" UID="{9E0147D2-77C7-49c9-9120-976033F5CFB7}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption20DStaticTextButton">
+<Function-Object Name="DrawSelectedOption20" UID="{BD14046F-294A-4a24-BDE5-BFAEBCA0B44F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption21DStaticTextButton">
+<Function-Object Name="DrawSelectedOption21" UID="{F4ECC1C5-9AE1-449c-9F15-51FBE1FC4475}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption22DStaticTextButton">
+<Function-Object Name="DrawSelectedOption22" UID="{C9AF6F17-5D25-4e2e-B92B-AA2388F1183F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption23DStaticTextButton">
+<Function-Object Name="DrawSelectedOption23" UID="{0B394BAA-719C-49f1-9CF6-F870A6DD41B8}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption24DStaticTextButton">
+<Function-Object Name="DrawSelectedOption24" UID="{1435A692-C37F-4ec7-B2B3-4DEE95096223}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption25DStaticTextButton">
+<Function-Object Name="DrawSelectedOption25" UID="{934AC823-5349-4989-B00F-C86617FF96C2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption26DStaticTextButton">
+<Function-Object Name="DrawSelectedOption26" UID="{3611A4AB-B63C-4a24-B920-762E27C2C9B3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption27DStaticTextButton">
+<Function-Object Name="DrawSelectedOption27" UID="{D1A47D38-9AF0-40e4-BFC6-32B07DDD2EE1}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption28DStaticTextButton">
+<Function-Object Name="DrawSelectedOption28" UID="{A9DE3428-C43F-4775-8D2E-E3BF05E2A512}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption29DStaticTextButton">
+<Function-Object Name="DrawSelectedOption29" UID="{51F2C7D8-7613-4931-934D-DEEBD140AD44}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption30DStaticTextButton">
+<Function-Object Name="DrawSelectedOption30" UID="{A229BC2B-319D-4405-B8DE-FFBB0966FB31}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption31DStaticTextButton">
+<Function-Object Name="DrawSelectedOption31" UID="{177CA5DA-C562-4c64-9169-1C6736D422C2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption32DStaticTextButton">
+<Function-Object Name="DrawSelectedOption32" UID="{4DAE00E5-075E-4e47-8478-5AE6E716599A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption2DStaticTextExt">
+<Function-Object Name="DrawOption2" UID="{64274F05-8F0D-48ff-AA05-416087245627}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption3DStaticTextExt">
+<Function-Object Name="DrawOption3" UID="{2ED76622-4B7A-4cca-B3AD-AC2F3434C39E}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Canvas" UID="{D1BCE7CF-7600-4210-950F-8AE3A1AB63F4}" Group="" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="LoadColors" UID="{07C94700-CF48-40d0-8CB6-4F6FD24BB472}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="State" UID="{D4941D94-949C-4582-849D-490B828AE157}" Group="" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="TopMostState" UID="{8F69F46E-5491-4b82-8BD0-9FD4FE606527}" Group="" Image="" Virtual="false" Parentage="0" Base="{D4941D94-949C-4582-849D-490B828AE157}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="true" CanBeTopmost="true" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Group" UID="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="Thread" UID="{DA0AE742-C2A6-45d0-888B-B21FD3D5A9ED}" Group="" Image="" Virtual="false" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="CreationScript" Type="creation_script">
+<CreationScript>&lt;CreateObject ClassName = &quot;TopMostState&quot;/&gt;</CreationScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="OrderForTileIdGeneration" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="TimerObject" UID="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Timer" UID="{BB894056-60B1-4a61-8E5F-F245232D1E2B}" Group="" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Reset" UID="{2EF9C462-2350-45bb-98B6-05EB98EFCCEA}">
+<Variable Name="Value" Type="ulong">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Clear" UID="{985351B8-8253-493f-AFAC-3230CB43B027}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysTimer" UID="{DDBB1AA4-4F67-4913-87C2-22822F2C1B0B}" Group="" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="RamObject" UID="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="SubStructure" UID="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Group="" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Structure" UID="{97B8974E-D814-4dff-B506-0C02120D5A02}" Group="" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="GenerateValues" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="FactoryDefaultInRom" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="RamType" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Variable" UID="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}" Group="" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarByte" UID="{FA4CBCDA-8099-44ed-BE26-B2E191A2D269}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarSByte" UID="{B503F7D2-C0DE-4ebb-88BA-82749D537771}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarWord" UID="{0FD50741-FE2E-4d27-99E5-736C78498532}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarSWord" UID="{6897E8A3-0F7C-47c2-9E18-9CBD2A025A52}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Adjuster" UID="{D04AA833-0DA9-4e4b-A893-999539023C41}" Group="" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjByte" UID="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{88E1D9C6-0670-47a7-8F5A-60AFD8A95349}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjByte" UID="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Group="" Image="" Virtual="false" Parentage="0" Base="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{7469B5AD-8BD4-4f6e-B79A-5D037854C2F8}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjSByte" UID="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{56270514-D4BF-4254-8712-BB86C9F09F8C}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjSByte" UID="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Group="" Image="" Virtual="false" Parentage="0" Base="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{39373925-E7DF-4829-A958-52578C7C7D46}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjWord" UID="{1DEC549D-99CE-4af5-9102-87366948E77C}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{AAEDB08C-4923-4916-8C71-9DFF0CEB7155}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjWord" UID="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Group="" Image="" Virtual="false" Parentage="0" Base="{1DEC549D-99CE-4af5-9102-87366948E77C}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{CB8EB60E-5351-4176-9577-A8F74A9D6DB7}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjSWord" UID="{E9A3327F-0383-4428-8072-88C55153EBEE}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{1D1574D8-B16A-4d58-9B64-3CF6790AC978}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjSWord" UID="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Group="" Image="" Virtual="false" Parentage="0" Base="{E9A3327F-0383-4428-8072-88C55153EBEE}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{C2AAF0CB-CC5B-4761-BC21-EC4C074BFF23}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+</Entries>
+</Classes>
+<Timers RemovedUIDsPresent="true">
+<Entries/>
+</Timers>
+<RamStructures RemovedUIDsPresent="true">
+<Entries>
+<RamStructure Name="ModeIndependent" UID="{BB6FE5A9-9481-4501-972D-A7E9362C48A7}" QualifiedName="ModeIndependent">
+<Object Name="ModeIndependent" UID="{BB6FE5A9-9481-4501-972D-A7E9362C48A7}" Class="{97B8974E-D814-4dff-B506-0C02120D5A02}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="GenerateValues">
+<SimpleValueArray Value="true"/>
+</Prop>
+<Prop Name="FactoryDefaultInRom">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="RamType">
+<SimpleValueArray Value=""/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="ModeIndependent.CcOnMute">
+<Object Name="CcOnMute" UID="{4C34BEF8-6A85-4b2a-BCF4-58B0F752DB85}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="CcOnMute"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.PipHStart">
+<Object Name="PipHStart" UID="{E12C4055-34DC-45f8-B406-A6001EFD5324}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="PipHStart"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustPipHStart"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="MinPipHStart()"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="MaxPipHStart()"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.PipVStart">
+<Object Name="PipVStart" UID="{AD603173-1E51-4395-ABAD-5986C430FF25}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="PipVStart"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustPipVStart"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="MinPipVStart()"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="MaxPipVStart()"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.PipSize">
+<Object Name="PipSize" UID="{B5E1066F-3D8F-42c3-B00B-36D0DFABAF9C}" Class="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="PipSize"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="LARGE_PIP"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="LARGE_PIP"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="SMALL_PIP"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.SpeakerAudioSource">
+<Object Name="SpeakerAudioSource" UID="{C2AD6962-8FAF-4e58-8701-0F78C8C41423}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="SpeakerAudioSource"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="AUDIO_MAIN"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="AUDIO_MAIN"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="AUDIO_PIP"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.HeadphoneAudioSource">
+<Object Name="HeadphoneAudioSource" UID="{642FF997-FF16-41be-945D-0F04B764BEBD}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="HeadphoneAudioSource"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="AUDIO_MAIN"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="AUDIO_MAIN"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="AUDIO_PIP"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances/>
+</RamStructure>
+<RamStructure Name="Global" UID="{7F958E07-E8E8-43e7-AFB3-2CEE7C1FD822}" QualifiedName="Global">
+<Object Name="Global" UID="{7F958E07-E8E8-43e7-AFB3-2CEE7C1FD822}" Class="{97B8974E-D814-4dff-B506-0C02120D5A02}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="GenerateValues">
+<SimpleValueArray Value="true"/>
+</Prop>
+<Prop Name="FactoryDefaultInRom">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="RamType">
+<SimpleValueArray Value=""/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InfoDisplayOn">
+<Object Name="InfoDisplayOn" UID="{BB071855-4DB6-4b3d-B386-31ECD72F23B2}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="Flag to indicate if user pressed Info key"/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="InfoDisplayOn"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.TtxNoSignalFlag">
+<Object Name="TtxNoSignalFlag" UID="{6F76AF67-DAA4-49fd-9652-CF4691EB5126}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="TtxNoSignalFlag"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CcTileMainCreatedFlag">
+<Object Name="CcTileMainCreatedFlag" UID="{CF70CAD6-AB6A-4862-A0EF-ED4355BE6E80}" Class="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="CcTileMainCreatedFlag"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CcTilePipCreatedFlag">
+<Object Name="CcTilePipCreatedFlag" UID="{ADF89B91-B635-44cd-8D8A-65CC07B2750C}" Class="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="CcTilePipCreatedFlag"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CcFactoryResetFlag">
+<Object Name="CcFactoryResetFlag" UID="{E39B50EF-FAAC-471d-94A3-CB938080514B}" Class="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="CcFactoryResetFlag"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamStructure Name="InputPortListGroup" UID="{C8946621-75A8-470a-A8E7-FD2CE895CB36}" QualifiedName="Global.InputPortListGroup" RamSelectorName="{FE3F2B31-1D95-4ef6-98F5-09278E057ECB}">
+<Object Name="InputPortListGroup" UID="{C8946621-75A8-470a-A8E7-FD2CE895CB36}" Class="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value=""/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InputPortListGroup.InputPortList">
+<Object Name="InputPortList" UID="{8E5E52C8-7A50-461a-81A6-2B1CF332C8F7}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="InputPortList"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances>
+<RamStructure Name="InputPort_1" UID="{CA33D6CF-D01F-480b-A29A-D029AA3EEB7E}" QualifiedName="Global.InputPortListGroup.[InputPort_1]">
+<Object Name="InputPort_1" UID="{CA33D6CF-D01F-480b-A29A-D029AA3EEB7E}" Class="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Parentage="2">
+<Properties/>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InputPortListGroup.[InputPort_1].InputPortList" InstanceQualifiedName="Global.InputPortListGroup.InputPortList">
+<Object Name="InputPortList" UID="{4ED8E4DC-06F0-4d17-83E5-751D81E4CE30}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+</RamStructure>
+<RamStructure Name="InputPort_2" UID="{A0C81CEF-D1C7-4a73-8ADD-07EB2A20D824}" QualifiedName="Global.InputPortListGroup.[InputPort_2]">
+<Object Name="InputPort_2" UID="{A0C81CEF-D1C7-4a73-8ADD-07EB2A20D824}" Class="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Parentage="2">
+<Properties/>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InputPortListGroup.[InputPort_2].InputPortList" InstanceQualifiedName="Global.InputPortListGroup.InputPortList">
+<Object Name="InputPortList" UID="{5D340F9C-7F24-4f4a-98D1-4AD2837D78C2}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+</RamStructure>
+<RamStructure Name="InputPort_3" UID="{50509E99-80F8-4357-A2CA-970CBC032562}" QualifiedName="Global.InputPortListGroup.[InputPort_3]">
+<Object Name="InputPort_3" UID="{50509E99-80F8-4357-A2CA-970CBC032562}" Class="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Parentage="2">
+<Properties/>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InputPortListGroup.[InputPort_3].InputPortList" InstanceQualifiedName="Global.InputPortListGroup.InputPortList">
+<Object Name="InputPortList" UID="{97E56303-12AD-4d22-B753-0BAB4F80B0E4}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+</RamStructure>
+<RamStructure Name="InputPort_4" UID="{F6D1CF5A-23FA-4020-A6E7-DA74B98DB272}" QualifiedName="Global.InputPortListGroup.[InputPort_4]">
+<Object Name="InputPort_4" UID="{F6D1CF5A-23FA-4020-A6E7-DA74B98DB272}" Class="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Parentage="2">
+<Properties/>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InputPortListGroup.[InputPort_4].InputPortList" InstanceQualifiedName="Global.InputPortListGroup.InputPortList">
+<Object Name="InputPortList" UID="{FDCC6408-F0AE-4da4-9D5B-C61839DFFD4D}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+</RamStructure>
+<RamStructure Name="InputPort_5" UID="{0691FA9A-D112-4943-936A-45B050402BD2}" QualifiedName="Global.InputPortListGroup.[InputPort_5]">
+<Object Name="InputPort_5" UID="{0691FA9A-D112-4943-936A-45B050402BD2}" Class="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Parentage="2">
+<Properties/>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.InputPortListGroup.[InputPort_5].InputPortList" InstanceQualifiedName="Global.InputPortListGroup.InputPortList">
+<Object Name="InputPortList" UID="{0A88847E-80FC-46ec-BD21-2635117F4A00}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+</RamStructure>
+</Instances>
+</RamStructure>
+<RamVariable QualifiedName="Global.InputPortCount">
+<Object Name="InputPortCount" UID="{0F96C228-A5BA-44c1-B138-F99955B206E2}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="InputPortCount"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.DisplayPortName">
+<Object Name="DisplayPortName" UID="{E3792D42-BC8A-4715-B1D5-FB9A34FF2284}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="Flag to indicate if to display port name only"/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="DisplayPortName"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.DisplayMainPort">
+<Object Name="DisplayMainPort" UID="{45220102-47B7-45ae-A510-658DD2DD0E36}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="Flag to indicate if to display port is to be Main or PIP"/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="DisplayMainPort"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.TtxStatusDisplayToggleFlag">
+<Object Name="TtxStatusDisplayToggleFlag" UID="{79923B79-B029-410c-B384-D25F298858EE}" Class="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="TtxStatusDisplayToggleFlag"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.OldOrNewPortChange">
+<Object Name="OldOrNewPortChange" UID="{BE63B10A-2965-48db-9925-32A9DB499E5F}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="OldOrNewPortChange"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.ChannelBlockStateFlagPip">
+<Object Name="ChannelBlockStateFlagPip" UID="{ABF7352E-3495-47a4-969A-E6456FB6B34D}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="Pip TV Block  Status"/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ChannelBlockStateFlagPip"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances/>
+</RamStructure>
+<RamStructure Name="PortSchemeDependent" UID="{BF7C3469-336A-48a0-8C17-454CCAACC348}" QualifiedName="PortSchemeDependent">
+<Object Name="PortSchemeDependent" UID="{BF7C3469-336A-48a0-8C17-454CCAACC348}" Class="{97B8974E-D814-4dff-B506-0C02120D5A02}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="GenerateValues">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="FactoryDefaultInRom">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="RamType">
+<SimpleValueArray Value=""/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="PortSchemeDependent.Acm3BlueLuma">
+<Object Name="Acm3BlueLuma" UID="{5D2C18BD-D706-4ea6-A3B9-BB9DD366B782}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="Acm3BlueLuma"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustAcmBlueLuma"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-127"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="127"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.Acm3CyanLuma">
+<Object Name="Acm3CyanLuma" UID="{751BB7DF-5D86-4cac-AE26-38F0D2F91564}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="Acm3CyanLuma"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustAcmCyanLuma"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-127"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="127"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.Acm3GreenLuma">
+<Object Name="Acm3GreenLuma" UID="{C4187FD3-CD81-484d-91FD-9C1318C2BCB9}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="Acm3GreenLuma"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustAcmGreenLuma"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-127"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="127"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.Acm3MagentaLuma">
+<Object Name="Acm3MagentaLuma" UID="{CC1A18EE-70BA-4c0a-848B-9C3C6E753E4E}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="Acm3MagentaLuma"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustAcmMagentaLuma"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-127"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="127"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.Acm3RedLuma">
+<Object Name="Acm3RedLuma" UID="{A0205C27-CEF2-4d8a-B859-0D2E043537D3}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="Acm3RedLuma"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustAcmRedLuma"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-127"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="127"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.Acm3YellowLuma">
+<Object Name="Acm3YellowLuma" UID="{47631112-E1A8-4278-928A-0D3456ABB265}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="Acm3YellowLuma"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustAcmYellowLuma"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-127"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="127"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.UserRedGain">
+<Object Name="UserRedGain" UID="{1B0D81AC-BF31-4a4d-B0B9-AA3DC478AD1C}" Class="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="UserRedGain"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustRedGain"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="256"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="128"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="384"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.UserGreenGain">
+<Object Name="UserGreenGain" UID="{1FB27216-ABC8-498b-846C-E37F67A526E8}" Class="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="UserGreenGain"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustGreenGain"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="256"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="128"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="384"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.UserBlueGain">
+<Object Name="UserBlueGain" UID="{8165511E-AD3F-4755-A4DF-DF9A76A12538}" Class="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="UserBlueGain"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustBlueGain"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="256"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="128"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="384"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.UserRedOff">
+<Object Name="UserRedOff" UID="{B705E2AA-7BCB-4595-A039-6EBB1C2F57A2}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="UserRedOff"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustRedOff"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-50"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="50"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.UserGreenOff">
+<Object Name="UserGreenOff" UID="{B41DF175-2877-48da-80DE-AC49900EE7EA}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="UserGreenOff"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustGreenOff"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-50"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="50"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.UserBlueOff">
+<Object Name="UserBlueOff" UID="{D51150C0-6F8E-4c85-8560-F04D02786A0A}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="UserBlueOff"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustBlueOff"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-50"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="50"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.GammaTable">
+<Object Name="GammaTable" UID="{6BBD138B-3DB0-4c69-AE65-D7348B3E9D8F}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="Varaible to choose Gamma Table"/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="GammaTable"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustGammaCorrection"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="true"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="GAMMA_TABLE_OFF"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="GAMMA_TABLE_OFF"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="GAMMA_TABLE_28"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.MFMImageScheme">
+<Object Name="MFMImageScheme" UID="{4D179337-633E-4a15-A115-42E93CBE7B12}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="MFMImageScheme"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="VIVID"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="NUM_IMAGE_SCHEMES-1"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.ScartRedGain">
+<Object Name="ScartRedGain" UID="{0D1E7E56-6DE1-4831-9043-216860A8BC23}" Class="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ScartRedGain"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustScartRedGain"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="256"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="128"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="384"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="BallisticAcceleration()"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.ScartGreenGain">
+<Object Name="ScartGreenGain" UID="{D505340A-BCA9-406e-BB2F-CCB865422417}" Class="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ScartGreenGain"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustScartGreenGain"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="256"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="128"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="384"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="BallisticAcceleration()"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.ScartBlueGain">
+<Object Name="ScartBlueGain" UID="{B4718A1D-829F-4014-83C1-08D09686F736}" Class="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ScartBlueGain"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustScartBlueGain"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="256"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="128"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="384"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="BallisticAcceleration()"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.ScartRedOff">
+<Object Name="ScartRedOff" UID="{08C67E32-9F89-4724-BC02-20D09D11E6A8}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ScartRedOff"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustScartRedOff"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-50"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="50"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.ScartGreenOff">
+<Object Name="ScartGreenOff" UID="{0521CC6B-608E-484d-B0CB-601F30CCE588}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ScartGreenOff"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustScartGreenOff"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-50"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="50"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="PortSchemeDependent.ScartBlueOff">
+<Object Name="ScartBlueOff" UID="{8EB80727-354B-4e74-A484-15F27DEA8611}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="ScartBlueOff"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value="AdjustScartBlueOff"/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="-50"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="50"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances/>
+</RamStructure>
+</Entries>
+</RamStructures>
+<Strings RemovedUIDsPresent="true">
+<Entries/>
+</Strings>
+<Objects RemovedUIDsPresent="true">
+<Entries/>
+</Objects>
+<NVRam RemovedUIDsPresent="true" NVRAM-Version="97">
+<Entries>
+<NVRamHeader/>
+</Entries>
+</NVRam>
+</osd>
+<ConfigMgr>
+<Configurations Active="Default">
+<Configuration Name="Default">
+<Configs>
+<CodeGenerator>
+<Configs>
+<Reports>
+<Configs/>
+<ReportTops>
+<Controls>
+<Reports>
+<CLUT Status="false"/>
+<DetailReport Status="false"/>
+<MemMap Status="false"/>
+<StateActionTable Status="false"/>
+<StateResources Status="false"/>
+</Reports>
+</Controls>
+<GlyphTables>
+<Reports>
+<GlyphTable Status="false"/>
+</Reports>
+</GlyphTables>
+<Miscellaneous>
+<Reports>
+<ROMSizes Status="false"/>
+<Summary Status="false"/>
+</Reports>
+</Miscellaneous>
+</ReportTops>
+<ConfigReports-Path Value=".\Reports"/>
+</Reports>
+<BuildConditions>
+<Configs/>
+<BuildConditionStatusMap/>
+</BuildConditions>
+<Languages>
+<Configs/>
+<LanguageStatusMap/>
+</Languages>
+<Keypads>
+<Configs/>
+<KeypadStatusMap/>
+</Keypads>
+<State_Machine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="4"/>
+</Params>
+</State_Machine>
+<Adjuster_Engine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="4"/>
+</Params>
+</Adjuster_Engine>
+<Timer>
+<Configs/>
+<Params>
+<Param QualifiedName="Resolution" Type="enum" Value="1.00"/>
+</Params>
+</Timer>
+<Keystrokes>
+<Configs/>
+<Params>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State Before" Type="enum" Value="false"/>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State After" Type="enum" Value="false"/>
+</Params>
+</Keystrokes>
+<Osd>
+<Configs/>
+<Params>
+<Param QualifiedName="Unicode.Enable UNISCRIBE script" Type="enum" Value="true"/>
+<Param QualifiedName="Rotation.Enable" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Force Tile Color Depth" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Firmware Buffer Size" Type="enum" Value="1024"/>
+<Param QualifiedName="Tile Controls.Allocation" Type="enum" Value="Memory efficient"/>
+<Param QualifiedName="Tile Controls.Tile Id Allocation" Type="enum" Value="Automatic"/>
+<Param QualifiedName="SDRam.Start" Type="int" Value="0"/>
+<Param QualifiedName="SDRam.Size" Type="int" Value="800000"/>
+<Param QualifiedName="Text Controls.Compression.Enable" Type="enum" Value="true"/>
+<Param QualifiedName="Color Space" Type="enum" Value="RGB"/>
+</Params>
+</Osd>
+</Configs>
+<GenerationConfig-Path Value=".\GenFiles"/>
+</CodeGenerator>
+</Configs>
+</Configuration>
+</Configurations>
+</ConfigMgr>
+<Documents/>
+</Genesis-Workbench-Project>

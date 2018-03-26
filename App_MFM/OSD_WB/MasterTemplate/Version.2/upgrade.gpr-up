@@ -1,0 +1,1796 @@
+<Genesis-Workbench-Project Version="4" Chip-Name="FLI8532" MasterProjectVersion="0" SepMode="0">
+<osd>
+<BuildConditions RemovedUIDsPresent="true">
+<Entries/>
+</BuildConditions>
+<Events RemovedUIDsPresent="true">
+<Entries/>
+</Events>
+<Functions RemovedUIDsPresent="true">
+<Entries/>
+</Functions>
+<RamSelectors RemovedUIDsPresent="true">
+<Entries/>
+</RamSelectors>
+<Keypads RemovedUIDsPresent="true">
+<Entries/>
+</Keypads>
+<Keys RemovedUIDsPresent="true">
+<Entries/>
+</Keys>
+<Keystrokes RemovedUIDsPresent="true">
+<Entries/>
+</Keystrokes>
+<Languages ActiveCodePage="4294967295" RemovedUIDsPresent="true">
+<Entries/>
+</Languages>
+<Classes RemovedUIDsPresent="true">
+<Entries>
+<Class Name="StateTree" UID="{178C0F57-58E3-430c-AAAC-53371AD26C29}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Control" UID="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}" Group="" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="SimpleControl" UID="{15ACA86D-D178-4475-B8C5-2915615194FF}" Group="" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="BaseTile" UID="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}" Desc="BaseTile" Group="" Image="Tile.bmp" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id" Value="1"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="ControlRect" UID="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}" Group="" Image="" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id" Value=""/>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<Rect XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{FC5271F3-26D1-4829-8FC5-ABD47549FD66}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Erase" UID="{3A521991-6FCF-4c43-BAA3-D73ED58CF8E5}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Canvas" UID="{D1BCE7CF-7600-4210-950F-8AE3A1AB63F4}" Group="" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="LoadColors" UID="{07C94700-CF48-40d0-8CB6-4F6FD24BB472}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="State" UID="{D4941D94-949C-4582-849D-490B828AE157}" Group="" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="TopMostState" UID="{8F69F46E-5491-4b82-8BD0-9FD4FE606527}" Group="" Image="" Virtual="false" Parentage="0" Base="{D4941D94-949C-4582-849D-490B828AE157}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="true" CanBeTopmost="true" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Group" UID="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="Thread" UID="{DA0AE742-C2A6-45d0-888B-B21FD3D5A9ED}" Group="" Image="" Virtual="false" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="CreationScript" Type="creation_script">
+<CreationScript>&lt;CreateObject ClassName = &quot;TopMostState&quot;/&gt;</CreationScript>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="TimerObject" UID="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Timer" UID="{BB894056-60B1-4a61-8E5F-F245232D1E2B}" Group="" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Reset" UID="{2EF9C462-2350-45bb-98B6-05EB98EFCCEA}">
+<Variable Name="Value" Type="ulong" Value="0"/>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Clear" UID="{985351B8-8253-493f-AFAC-3230CB43B027}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysTimer" UID="{DDBB1AA4-4F67-4913-87C2-22822F2C1B0B}" Group="" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="RamObject" UID="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="SubStructure" UID="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Group="" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Structure" UID="{97B8974E-D814-4dff-B506-0C02120D5A02}" Group="" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="GenerateValues" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="FactoryDefaultInRom" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="RamType" Type="string" Value=""/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Variable" UID="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}" Group="" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarByte" UID="{FA4CBCDA-8099-44ed-BE26-B2E191A2D269}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="true"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="1"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarSByte" UID="{B503F7D2-C0DE-4ebb-88BA-82749D537771}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="1"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarWord" UID="{0FD50741-FE2E-4d27-99E5-736C78498532}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="true"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="2"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarSWord" UID="{6897E8A3-0F7C-47c2-9E18-9CBD2A025A52}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="2"/>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Adjuster" UID="{D04AA833-0DA9-4e4b-A893-999539023C41}" Group="" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjByte" UID="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="true"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="1"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte" Value="0"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte" Value="255"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{88E1D9C6-0670-47a7-8F5A-60AFD8A95349}">
+<Variable Name="Value" Type="byte" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjByte" UID="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Group="" Image="" Virtual="false" Parentage="0" Base="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="true"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="1"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte" Value="0"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte" Value="255"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{7469B5AD-8BD4-4f6e-B79A-5D037854C2F8}">
+<Variable Name="Value" Type="byte" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjSByte" UID="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="1"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char" Value="-128"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char" Value="127"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{56270514-D4BF-4254-8712-BB86C9F09F8C}">
+<Variable Name="Value" Type="char" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjSByte" UID="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Group="" Image="" Virtual="false" Parentage="0" Base="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="1"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char" Value="-128"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char" Value="127"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{39373925-E7DF-4829-A958-52578C7C7D46}">
+<Variable Name="Value" Type="char" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjWord" UID="{1DEC549D-99CE-4af5-9102-87366948E77C}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="true"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="2"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort" Value="0"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort" Value="65535"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{AAEDB08C-4923-4916-8C71-9DFF0CEB7155}">
+<Variable Name="Value" Type="ushort" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjWord" UID="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Group="" Image="" Virtual="false" Parentage="0" Base="{1DEC549D-99CE-4af5-9102-87366948E77C}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="true"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="2"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort" Value="0"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort" Value="65535"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{CB8EB60E-5351-4176-9577-A8F74A9D6DB7}">
+<Variable Name="Value" Type="ushort" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjSWord" UID="{E9A3327F-0383-4428-8072-88C55153EBEE}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="false"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="2"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short" Value="-32768"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short" Value="32767"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{1D1574D8-B16A-4d58-9B64-3CF6790AC978}">
+<Variable Name="Value" Type="short" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjSWord" UID="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Group="" Image="" Virtual="false" Parentage="0" Base="{E9A3327F-0383-4428-8072-88C55153EBEE}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string" Value=""/>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool" Value="true"/>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short" Value="0"/>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool" Value="false"/>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte" Value="2"/>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short" Value="-32768"/>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short" Value="32767"/>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short" Value="1"/>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{C2AAF0CB-CC5B-4761-BC21-EC4C074BFF23}">
+<Variable Name="Value" Type="short" Value="0"/>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+</Entries>
+</Classes>
+<Timers RemovedUIDsPresent="true">
+<Entries/>
+</Timers>
+<RamStructures RemovedUIDsPresent="true">
+<Entries>
+<RamStructure Name="ModeIndependent" UID="{8EA76DCA-F405-4582-A4EC-0884FFAEE5E0}" QualifiedName="ModeIndependent">
+<Object Name="ModeIndependent" UID="{8EA76DCA-F405-4582-A4EC-0884FFAEE5E0}" Class="{97B8974E-D814-4dff-B506-0C02120D5A02}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="GenerateValues" Value="true"/>
+<Prop Name="FactoryDefaultInRom" Value=""/>
+<Prop Name="RamType" Value=""/>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="ModeIndependent.TNR">
+<Object Name="TNR" UID="{CA524F25-3C70-4828-866F-F0E8261488AF}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="TNR"/>
+<Prop Name="AdjFunction" Value="AdjustTNR"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="TNR_LOW"/>
+<Prop Name="Min" Value="TNR_OFF"/>
+<Prop Name="Max" Value="TNR_HIGH"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.MADI">
+<Object Name="MADI" UID="{077A50D0-55E7-4daf-8778-8BF33DC07CAE}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="MADI"/>
+<Prop Name="AdjFunction" Value="AdjustMADI"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="MADI_STANDARD"/>
+<Prop Name="Min" Value="MADI_OFF"/>
+<Prop Name="Max" Value="MADI_STANDARD"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.CCS">
+<Object Name="CCS" UID="{4B0A0DB2-84E3-4522-A31E-1D1102E56E28}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="CCS"/>
+<Prop Name="AdjFunction" Value="AdjustCCS"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="CCS_OFF"/>
+<Prop Name="Min" Value="CCS_OFF"/>
+<Prop Name="Max" Value="CCS_STANDARD"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.SharpNoise">
+<Object Name="SharpNoise" UID="{5ECC9BC1-AA38-4807-B721-D8CD8CDDFB32}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="SharpNoise"/>
+<Prop Name="AdjFunction" Value="AdjustSharpNoise"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="SHARPNOISE_LOW"/>
+<Prop Name="Min" Value="SHARPNOISE_OFF"/>
+<Prop Name="Max" Value="SHARPNOISE_HIGH"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ACCScheme">
+<Object Name="ACCScheme" UID="{755E316B-77B5-44cb-B3BF-8D24EE7C0D95}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ACCScheme"/>
+<Prop Name="AdjFunction" Value="AdjustACCScheme"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="ACC_ACM_SCHEME_OFF"/>
+<Prop Name="Min" Value="ACC_ACM_SCHEME_OFF"/>
+<Prop Name="Max" Value="ACC_ACM_SCHEME_CUSTOM"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ACMScheme">
+<Object Name="ACMScheme" UID="{DD6152DC-758E-4cba-836E-B8C30890A03F}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ACMScheme"/>
+<Prop Name="AdjFunction" Value="AdjustACMScheme"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="ACC_ACM_SCHEME_OFF"/>
+<Prop Name="Min" Value="ACC_ACM_SCHEME_OFF"/>
+<Prop Name="Max" Value="ACC_ACM_SCHEME_CUSTOM"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.SplitScreen">
+<Object Name="SplitScreen" UID="{DCB73F48-540C-4651-BBE8-3682810ADF6E}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="SplitScreen"/>
+<Prop Name="AdjFunction" Value="AdjustSplitScreen"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="1"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.DCDiMain">
+<Object Name="DCDiMain" UID="{5000B1C2-271F-493e-980B-3CA89B212610}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="DCDiMain"/>
+<Prop Name="AdjFunction" Value="AdjustDCDiMain"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="ENABLE"/>
+<Prop Name="Min" Value="DISABLE"/>
+<Prop Name="Max" Value="ENABLE"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.DCDiPip">
+<Object Name="DCDiPip" UID="{E4E7F9CF-B561-4d77-A4A4-03B14DA2A9CD}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="DCDiPip"/>
+<Prop Name="AdjFunction" Value="AdjustDCDiPip"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="ENABLE"/>
+<Prop Name="Min" Value="DISABLE"/>
+<Prop Name="Max" Value="ENABLE"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ACCACMScheme">
+<Object Name="ACCACMScheme" UID="{6FB8399B-6E35-4b6b-9FAF-BDD336563747}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ACCACMScheme"/>
+<Prop Name="AdjFunction" Value="AdjustACCACMScheme"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="ACC_ACM_SCHEME_OFF"/>
+<Prop Name="Min" Value="ACC_ACM_SCHEME_OFF"/>
+<Prop Name="Max" Value="ACC_ACM_SCHEME_CUSTOM"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.MPEGNRMode">
+<Object Name="MPEGNRMode" UID="{D1D66C22-C053-4f8d-B89A-1BA6E29AA14F}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="MPEGNRMode"/>
+<Prop Name="AdjFunction" Value="AdjustMPEGNRMode"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="MPEG_NR_MOSQ"/>
+<Prop Name="Min" Value="MPEG_NR_OFF"/>
+<Prop Name="Max" Value="MPEG_NR_GAUSS"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.MPEGNRThresh0">
+<Object Name="MPEGNRThresh0" UID="{6748F69B-76C0-4481-B0D5-AFB5C214AAE8}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="MPEGNRThresh0"/>
+<Prop Name="AdjFunction" Value="AdjustMPEGNRThresh"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="MPEG_NR_THRESHOLD_0_DEF"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="MPEG_NR_THRESHOLD_0_MAX"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.MPEGNRThresh1">
+<Object Name="MPEGNRThresh1" UID="{0299399A-4BB0-4cdd-8E30-05B8D07D07EB}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="MPEGNRThresh1"/>
+<Prop Name="AdjFunction" Value="AdjustMPEGNRThresh"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="MPEG_NR_THRESHOLD_1_DEF"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="MPEG_NR_THRESHOLD_1_MAX"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.MPEGNRThresh2">
+<Object Name="MPEGNRThresh2" UID="{8202788E-6295-46fa-AB87-5911078A9DE5}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="MPEGNRThresh2"/>
+<Prop Name="AdjFunction" Value="AdjustMPEGNRThresh"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="MPEG_NR_THRESHOLD_2_DEF"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="MPEG_NR_THRESHOLD_2_MAX"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.LCDOverdriveNoiseCoring">
+<Object Name="LCDOverdriveNoiseCoring" UID="{89C03C88-518B-449e-8A0C-D8023240AD84}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="LCDOverdriveNoiseCoring"/>
+<Prop Name="AdjFunction" Value="AdjustLCDOverdriveNoiseCoring"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="OD_NOISE_CORING_ADAPTIVE"/>
+<Prop Name="Min" Value="OD_NOISE_CORING_OFF"/>
+<Prop Name="Max" Value="OD_NOISE_CORING_ADAPTIVE"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ThreeTwoFilmDisplayMode">
+<Object Name="ThreeTwoFilmDisplayMode" UID="{FAA1D873-07CF-4582-8CBB-B05A633606D8}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ThreeTwoFilmDisplayMode"/>
+<Prop Name="AdjFunction" Value="AdjustThreeTwoFilmDisplayMode"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="NORMAL_32_DISPLAY_MODE"/>
+<Prop Name="Min" Value="NORMAL_32_DISPLAY_MODE"/>
+<Prop Name="Max" Value="FORCE_22_DISPLAY_MODE"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.VBI_ServicePreferred">
+<Object Name="VBI_ServicePreferred" UID="{87324491-AC30-42dc-9425-22A2FC844D33}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="VBI_ServicePreferred"/>
+<Prop Name="AdjFunction" Value="AdjustVBIService"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="VBI_SERVICE_CC"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="255"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.TVCountry">
+<Object Name="TVCountry" UID="{41BA0530-8F68-4a1e-ABB8-42A5B944C030}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value="Country selection for TV Install"/>
+<Prop Name="Shortcut" Value="TVCountry"/>
+<Prop Name="AdjFunction" Value="AdjustTVCountry"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="GERMANY"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="MAX_COUNTRIES-1"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.SharpnessPip">
+<Object Name="SharpnessPip" UID="{A139DE21-C611-4261-86C8-3903A65B5965}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="SharpnessPip"/>
+<Prop Name="AdjFunction" Value="AdjustSharpness"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="12"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="24"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.BlueStretch">
+<Object Name="BlueStretch" UID="{28E9FC18-2478-4da3-9805-7E9FF797E364}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="BlueStretch"/>
+<Prop Name="AdjFunction" Value="AdjustBlueStretch"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="BLUE_STRETCH_OFF"/>
+<Prop Name="Min" Value="BLUE_STRETCH_OFF"/>
+<Prop Name="Max" Value="BLUE_STRETCH_HIGH"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.SharpnessRGB">
+<Object Name="SharpnessRGB" UID="{00310ABE-3D5D-437c-96C0-04A6DF2A08F1}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="SharpnessRGB"/>
+<Prop Name="AdjFunction" Value="AdjustSharpnessRGB"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="12"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="24"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.SharpnessRGBpip">
+<Object Name="SharpnessRGBpip" UID="{D49D3F46-8A89-4c08-AD5C-2902B0CC0B13}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="SharpnessRGBpip"/>
+<Prop Name="AdjFunction" Value="AdjustSharpnessRGB"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="12"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="24"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AVSDelay">
+<Object Name="AVSDelay" UID="{37F0B9E9-8975-44cf-9EC6-1147216CC2F0}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AVSDelay"/>
+<Prop Name="AdjFunction" Value="AdjustAVSDelayOnOff"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="2"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmBlueLumaGain">
+<Object Name="AcmBlueLumaGain" UID="{A6181C85-F1BD-4d94-BD65-DC399D6D69EE}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmBlueLumaGain"/>
+<Prop Name="AdjFunction" Value="AdjustAcmBlueLumaGain"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmCyanLumaGain">
+<Object Name="AcmCyanLumaGain" UID="{B3507B16-0C88-4963-B7A0-3B4E65957325}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmCyanLumaGain"/>
+<Prop Name="AdjFunction" Value="AdjustAcmCyanLumaGain"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmGreenLumaGain">
+<Object Name="AcmGreenLumaGain" UID="{B6462B5D-EDD8-4b7e-898B-4514AE649D2A}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmGreenLumaGain"/>
+<Prop Name="AdjFunction" Value="AdjustAcmGreenLumaGain"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmMagentaLumaGain">
+<Object Name="AcmMagentaLumaGain" UID="{0E1B40F6-9F3E-46f1-B751-E65AFC479CE8}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmMagentaLumaGain"/>
+<Prop Name="AdjFunction" Value="AdjustAcmMagentaLumaGain"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmRedLumaGain">
+<Object Name="AcmRedLumaGain" UID="{D18E4EF8-2E23-4375-B566-DF0C836F7C76}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmRedLumaGain"/>
+<Prop Name="AdjFunction" Value="AdjustAcmRedLumaGain"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmYellowLumaGain">
+<Object Name="AcmYellowLumaGain" UID="{A49A184B-DBF9-4502-B0C0-34ACEE4DD460}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmYellowLumaGain"/>
+<Prop Name="AdjFunction" Value="AdjustAcmYellowLumaGain"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmRedLumaOffs">
+<Object Name="AcmRedLumaOffs" UID="{054661EA-E446-4333-AEBC-A911D0765335}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmRedLumaOffs"/>
+<Prop Name="AdjFunction" Value="AdjustAcmRedLumaOffs"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmGreenLumaOffs">
+<Object Name="AcmGreenLumaOffs" UID="{7F96F820-4635-4a49-8532-FD959E921223}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmGreenLumaOffs"/>
+<Prop Name="AdjFunction" Value="AdjustAcmGreenLumaOffs"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmBlueLumaOffs">
+<Object Name="AcmBlueLumaOffs" UID="{D11B4D6E-8EA3-4ab0-8497-85A82F689FBA}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmBlueLumaOffs"/>
+<Prop Name="AdjFunction" Value="AdjustAcmBlueLumaOffs"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmYellowLumaOffs">
+<Object Name="AcmYellowLumaOffs" UID="{808543CA-C39F-4055-B516-36465BAA6136}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmYellowLumaOffs"/>
+<Prop Name="AdjFunction" Value="AdjustAcmYellowLumaOffs"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmMagentaLumaOffs">
+<Object Name="AcmMagentaLumaOffs" UID="{7C5B7D11-5A97-4898-AAA6-5E190BA44A6B}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmMagentaLumaOffs"/>
+<Prop Name="AdjFunction" Value="AdjustAcmMagentaLumaOffs"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AcmCyanLumaOffs">
+<Object Name="AcmCyanLumaOffs" UID="{B3B4BD19-4F2A-4fa5-9262-15E3E8F3292C}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AcmCyanLumaOffs"/>
+<Prop Name="AdjFunction" Value="AdjustAcmCyanLumaOffs"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3BlueHue">
+<Object Name="Acm3BlueHue" UID="{D8549357-F68C-4fdd-9652-D350F6C3BC22}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3BlueHue"/>
+<Prop Name="AdjFunction" Value="AdjustAcmBlueHue"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3CyanHue">
+<Object Name="Acm3CyanHue" UID="{9A0750DF-0987-4483-9713-10BFB68BD99F}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3CyanHue"/>
+<Prop Name="AdjFunction" Value="AdjustAcmCyanHue"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3GreenHue">
+<Object Name="Acm3GreenHue" UID="{3EC836F8-5FD3-4513-84C5-F8910E108442}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3GreenHue"/>
+<Prop Name="AdjFunction" Value="AdjustAcmGreenHue"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3MagentaHue">
+<Object Name="Acm3MagentaHue" UID="{C4624FB6-309E-49c2-BF5D-9A25A600B0A7}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3MagentaHue"/>
+<Prop Name="AdjFunction" Value="AdjustAcmMagentaHue"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3RedHue">
+<Object Name="Acm3RedHue" UID="{7F978A4B-B501-40d3-B039-D3DA513250AD}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3RedHue"/>
+<Prop Name="AdjFunction" Value="AdjustAcmRedHue"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3YellowHue">
+<Object Name="Acm3YellowHue" UID="{495BF02A-0138-4deb-9E40-0E859CCB5628}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3YellowHue"/>
+<Prop Name="AdjFunction" Value="AdjustAcmYellowHue"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3BlueSat">
+<Object Name="Acm3BlueSat" UID="{7B523E3D-C217-4592-8AC7-EED6A7EA5CA7}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3BlueSat"/>
+<Prop Name="AdjFunction" Value="AdjustAcmBlueSat"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3CyanSat">
+<Object Name="Acm3CyanSat" UID="{28E10C40-07B4-4e69-8583-4A272F601E67}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3CyanSat"/>
+<Prop Name="AdjFunction" Value="AdjustAcmCyanSat"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3GreenSat">
+<Object Name="Acm3GreenSat" UID="{51756247-D430-47c5-9CF4-3700A8EC0672}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3GreenSat"/>
+<Prop Name="AdjFunction" Value="AdjustAcmGreenSat"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3MagentaSat">
+<Object Name="Acm3MagentaSat" UID="{FFD5B289-59C6-4c73-9BC4-AFD316C5CCBC}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3MagentaSat"/>
+<Prop Name="AdjFunction" Value="AdjustAcmMagentaSat"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3RedSat">
+<Object Name="Acm3RedSat" UID="{4F9DCEB2-EDB1-4d42-A9FA-19185598B466}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3RedSat"/>
+<Prop Name="AdjFunction" Value="AdjustAcmRedSat"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.Acm3YellowSat">
+<Object Name="Acm3YellowSat" UID="{A53C3985-5CA5-4254-8667-4C475EA08853}" Class="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="Acm3YellowSat"/>
+<Prop Name="AdjFunction" Value="AdjustAcmYellowSat"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="64"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ACM3DColorScheme">
+<Object Name="ACM3DColorScheme" UID="{0856680B-64ED-43b6-B80F-C3EAB9D92D06}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ACM3DColorScheme"/>
+<Prop Name="AdjFunction" Value="AdjustACM3DColorScheme"/>
+<Prop Name="Cyclic" Value="true"/>
+<Prop Name="Value" Value="OFF_ACM3D_SCHEME"/>
+<Prop Name="Min" Value="OFF_ACM3D_SCHEME"/>
+<Prop Name="Max" Value="CUSTOM_ACM3D_SCHEME"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.AudioVolume">
+<Object Name="AudioVolume" UID="{985B60A1-C9D3-434d-B1EF-EB370B121E0E}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="AudioVolume"/>
+<Prop Name="AdjFunction" Value="AdjustAudioVolume"/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="11"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="31"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ADCCalibrationMethod_Comp">
+<Object Name="ADCCalibrationMethod_Comp" UID="{4A655A41-2DB3-4c5c-BBBD-49D7EB4D07AC}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ADCCalibrationMethod_Comp"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="EIGHT_COLOR_BAR_100"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="NUM_ADC_METHODS_COMP-1"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="ModeIndependent.ADCCalibrationMethod_VGA">
+<Object Name="ADCCalibrationMethod_VGA" UID="{B6C7F2EC-B17B-425d-A6CD-549238BFAB39}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ADCCalibrationMethod_VGA"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="PIXEL_GRAB"/>
+<Prop Name="Min" Value="0"/>
+<Prop Name="Max" Value="NUM_ADC_METHODS_VGA-1"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances/>
+</RamStructure>
+<RamStructure Name="Global" UID="{7D886119-532E-406c-8BFB-5D9B9540FA10}" QualifiedName="Global">
+<Object Name="Global" UID="{7D886119-532E-406c-8BFB-5D9B9540FA10}" Class="{97B8974E-D814-4dff-B506-0C02120D5A02}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="GenerateValues" Value="true"/>
+<Prop Name="FactoryDefaultInRom" Value=""/>
+<Prop Name="RamType" Value=""/>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.ParentalBlockStateFlagMain">
+<Object Name="ParentalBlockStateFlagMain" UID="{E778EF11-621E-4359-A600-0736B9F801B8}" Class="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ParentalBlockStateFlagMain"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.ParentalBlockStateFlagPip">
+<Object Name="ParentalBlockStateFlagPip" UID="{228A7A22-2B54-40fd-975C-EF0438932168}" Class="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value=""/>
+<Prop Name="Shortcut" Value="ParentalBlockStateFlagPip"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="0"/>
+<Prop Name="Min" Value="-128"/>
+<Prop Name="Max" Value="127"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CurrentBlockedTVRatingMain">
+<Object Name="CurrentBlockedTVRatingMain" UID="{7F69EFCD-AE2D-4c7d-B8AC-7676228F0971}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value="Main TV Program Rating"/>
+<Prop Name="Shortcut" Value="CurrentBlockedTVRatingMain"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="PROG_RATING_7_NO_BLOCK"/>
+<Prop Name="Min" Value="PROG_RATING_NA"/>
+<Prop Name="Max" Value="PROG_RATING_7_UNRATED"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CurrentBlockedTVRatingPip">
+<Object Name="CurrentBlockedTVRatingPip" UID="{17FB1764-CFCB-47d6-B736-2D012107BBB8}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value="Pip TV Program Rating"/>
+<Prop Name="Shortcut" Value="CurrentBlockedTVRatingPip"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="PROG_RATING_7_NO_BLOCK"/>
+<Prop Name="Min" Value="PROG_RATING_NA"/>
+<Prop Name="Max" Value="PROG_RATING_7_UNRATED"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CurrentBlockedMPRatingMain">
+<Object Name="CurrentBlockedMPRatingMain" UID="{F4F23265-B452-4ac0-BBA5-C957E08447BC}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value="Main Movie Rating"/>
+<Prop Name="Shortcut" Value="CurrentBlockedMPRatingMain"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="PROG_RATING_7_NO_BLOCK"/>
+<Prop Name="Min" Value="PROG_RATING_NA"/>
+<Prop Name="Max" Value="PROG_RATING_7_UNRATED"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+<RamVariable QualifiedName="Global.CurrentBlockedMPRatingPip">
+<Object Name="CurrentBlockedMPRatingPip" UID="{24AF7CB2-2D5C-4fa4-BCAD-6863DB6FAE0E}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc" Value="Pip Movie Rating"/>
+<Prop Name="Shortcut" Value="CurrentBlockedMPRatingPip"/>
+<Prop Name="AdjFunction" Value=""/>
+<Prop Name="Cyclic" Value="false"/>
+<Prop Name="Value" Value="PROG_RATING_7_NO_BLOCK"/>
+<Prop Name="Min" Value="PROG_RATING_NA"/>
+<Prop Name="Max" Value="PROG_RATING_7_UNRATED"/>
+<Prop Name="Step" Value="1"/>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances/>
+</RamStructure>
+</Entries>
+</RamStructures>
+<Strings RemovedUIDsPresent="true">
+<Entries/>
+</Strings>
+<Objects RemovedUIDsPresent="true">
+<Entries/>
+</Objects>
+<NVRam RemovedUIDsPresent="true" NVRAM-Version="51">
+<Entries>
+<NVRamHeader/>
+</Entries>
+</NVRam>
+</osd>
+<ConfigMgr>
+<Configurations Active="Default">
+<Configuration Name="Default">
+<Configs>
+<CodeGenerator>
+<Configs>
+<Reports>
+<Configs/>
+<ReportTops>
+<Controls>
+<Reports>
+<CLUT Status="false"/>
+<DetailReport Status="false"/>
+<MemMap Status="false"/>
+<StateActionTable Status="false"/>
+<StateResources Status="false"/>
+</Reports>
+</Controls>
+<GlyphTables>
+<Reports>
+<GlyphTable Status="false"/>
+</Reports>
+</GlyphTables>
+<Miscellaneous>
+<Reports>
+<ROMSizes Status="false"/>
+<Summary Status="false"/>
+</Reports>
+</Miscellaneous>
+</ReportTops>
+<ConfigReports-Path Value=".\Reports"/>
+</Reports>
+<BuildConditions>
+<Configs/>
+<BuildConditionStatusMap/>
+</BuildConditions>
+<Languages>
+<Configs/>
+<LanguageStatusMap/>
+</Languages>
+<Keypads>
+<Configs/>
+<KeypadStatusMap/>
+</Keypads>
+<State_Machine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="4"/>
+</Params>
+</State_Machine>
+<Adjuster_Engine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="4"/>
+</Params>
+</Adjuster_Engine>
+<Timer>
+<Configs/>
+<Params>
+<Param QualifiedName="Resolution" Type="enum" Value="1.00"/>
+</Params>
+</Timer>
+<Keystrokes>
+<Configs/>
+<Params>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State Before" Type="enum" Value="false"/>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State After" Type="enum" Value="false"/>
+</Params>
+</Keystrokes>
+<TCLK>
+<Configs/>
+<Params>
+<Param QualifiedName="TCLK" Type="enum" Value="14.318"/>
+</Params>
+</TCLK>
+<SDRAM>
+<Configs/>
+<Params>
+<Param QualifiedName="Bandwidth" Type="double" Value="167.0"/>
+<Param QualifiedName="Size" Type="enum" Value="128"/>
+<Param QualifiedName="SizeForOsd" Type="int" Value="2"/>
+<Param QualifiedName="MC_Config" Type="int" Value="0x0191"/>
+<Param QualifiedName="MC_Sdram" Type="int" Value="0xBA48"/>
+<Param QualifiedName="MC_Extended_Mode_Reg" Type="int" Value="0x0002"/>
+</Params>
+</SDRAM>
+<Main_Pip_Design>
+<Configs/>
+<Params>
+<Param QualifiedName="Style" Type="enum" Value="1Main1Pip"/>
+<Param QualifiedName="Channel" Type="enum" Value="graphics"/>
+<Param QualifiedName="CellPipWindowSize.Width" Type="int" Value="640"/>
+<Param QualifiedName="CellPipWindowSize.Height" Type="int" Value="512"/>
+<Param QualifiedName="MultiPipArray.Width" Type="int" Value="1"/>
+<Param QualifiedName="MultiPipArray.Height" Type="int" Value="1"/>
+<Param QualifiedName="MainWindowSize.Width" Type="int" Value="1600"/>
+<Param QualifiedName="MainWindowSize.Height" Type="int" Value="1200"/>
+<Param QualifiedName="Buffer Number.Video" Type="int" Value="5"/>
+<Param QualifiedName="Buffer Number.Graphics" Type="int" Value="2"/>
+<Param QualifiedName="Graphics Compression Enabled" Type="enum" Value="false"/>
+<Param QualifiedName="Max Limit.PAP.Graphic.Width" Type="int" Value="500"/>
+<Param QualifiedName="Max Limit.PAP.Graphic.Height" Type="int" Value="200"/>
+<Param QualifiedName="Max Limit.PAP.Video.Width" Type="int" Value="500"/>
+<Param QualifiedName="Max Limit.PAP.Video.Height" Type="int" Value="200"/>
+<Param QualifiedName="Max Limit.PIP.Graphic.Width" Type="int" Value="128"/>
+<Param QualifiedName="Max Limit.PIP.Graphic.Height" Type="int" Value="102"/>
+<Param QualifiedName="Max Limit.PIP.Video.Width" Type="int" Value="102"/>
+<Param QualifiedName="Max Limit.PIP.Video.Height" Type="int" Value="76"/>
+</Params>
+</Main_Pip_Design>
+<Display>
+<Configs/>
+<Params>
+<Param QualifiedName="PathFile" Type="PathFile" Value=""/>
+</Params>
+</Display>
+<Osd>
+<Configs/>
+<Params>
+<Param QualifiedName="Rotation.Enable" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Force Tile Color Depth" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Firmware Buffer Size" Type="enum" Value="1024"/>
+<Param QualifiedName="Tile Controls.Allocation" Type="enum" Value="Memory efficient"/>
+<Param QualifiedName="SDRam.Start" Type="int" Value="0"/>
+<Param QualifiedName="SDRam.Size" Type="int" Value="800000"/>
+<Param QualifiedName="Text Controls.Compression.Enable" Type="enum" Value="true"/>
+<Param QualifiedName="Color Space" Type="enum" Value="RGB"/>
+</Params>
+</Osd>
+</Configs>
+<GenerationConfig-Path Value=".\GenFiles"/>
+</CodeGenerator>
+</Configs>
+</Configuration>
+</Configurations>
+</ConfigMgr>
+<Documents/>
+</Genesis-Workbench-Project>

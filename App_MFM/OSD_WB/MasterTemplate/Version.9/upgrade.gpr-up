@@ -1,0 +1,1254 @@
+<Genesis-Workbench-Project Version="6" Chip-Name="FLI8532" MasterProjectVersion="0" SepMode="0">
+<osd>
+<BuildConditions RemovedUIDsPresent="true">
+<Entries/>
+</BuildConditions>
+<Languages ActiveLanguage="" RemovedUIDsPresent="true">
+<Entries/>
+</Languages>
+<Events RemovedUIDsPresent="true">
+<Entries/>
+</Events>
+<Functions RemovedUIDsPresent="true">
+<Entries/>
+</Functions>
+<RamSelectors RemovedUIDsPresent="true">
+<Entries/>
+</RamSelectors>
+<Keypads RemovedUIDsPresent="true">
+<Entries/>
+</Keypads>
+<Keys RemovedUIDsPresent="true">
+<Entries/>
+</Keys>
+<Keystrokes RemovedUIDsPresent="true">
+<Entries/>
+</Keystrokes>
+<Classes RemovedUIDsPresent="true">
+<Entries>
+<Class Name="StateTree" UID="{178C0F57-58E3-430c-AAAC-53371AD26C29}" Group="" InheritAutoCreateActions="false" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Control" UID="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="SimpleControl" UID="{15ACA86D-D178-4475-B8C5-2915615194FF}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="BaseTile" UID="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}" Desc="BaseTile" Group="" InheritAutoCreateActions="true" Image="Tile.bmp" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="ControlRect" UID="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Draw" UID="{FC5271F3-26D1-4829-8FC5-ABD47549FD66}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Erase" UID="{3A521991-6FCF-4c43-BAA3-D73ED58CF8E5}"/>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="Canvas" UID="{D1BCE7CF-7600-4210-950F-8AE3A1AB63F4}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="LoadColors" UID="{07C94700-CF48-40d0-8CB6-4F6FD24BB472}"/>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="State" UID="{D4941D94-949C-4582-849D-490B828AE157}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="TopMostState" UID="{8F69F46E-5491-4b82-8BD0-9FD4FE606527}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{D4941D94-949C-4582-849D-490B828AE157}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="true" CanBeTopmost="true" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Group" UID="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}" Group="" InheritAutoCreateActions="false" Image="" Virtual="true" Parentage="0">
+<Properties/>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Thread" UID="{DA0AE742-C2A6-45d0-888B-B21FD3D5A9ED}" Group="" InheritAutoCreateActions="false" Image="" Virtual="false" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="CreationScript" Type="creation_script">
+<CreationScript>&lt;CreateObject ClassName = &quot;TopMostState&quot;/&gt;</CreationScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="OrderForTileIdGeneration" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="TimerObject" UID="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}" Group="" InheritAutoCreateActions="false" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Timer" UID="{BB894056-60B1-4a61-8E5F-F245232D1E2B}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Reset" UID="{2EF9C462-2350-45bb-98B6-05EB98EFCCEA}">
+<Variable Name="Value" Type="ulong">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Clear" UID="{985351B8-8253-493f-AFAC-3230CB43B027}"/>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="SysTimer" UID="{DDBB1AA4-4F67-4913-87C2-22822F2C1B0B}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="RamObject" UID="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}" Group="" InheritAutoCreateActions="false" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="SubStructure" UID="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Structure" UID="{97B8974E-D814-4dff-B506-0C02120D5A02}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="GenerateValues" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="FactoryDefaultInRom" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="RamType" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Variable" UID="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="VarByte" UID="{FA4CBCDA-8099-44ed-BE26-B2E191A2D269}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="VarSByte" UID="{B503F7D2-C0DE-4ebb-88BA-82749D537771}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="VarWord" UID="{0FD50741-FE2E-4d27-99E5-736C78498532}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="VarSWord" UID="{6897E8A3-0F7C-47c2-9E18-9CBD2A025A52}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+<AutoCreateActions/>
+</Class>
+<Class Name="Adjuster" UID="{D04AA833-0DA9-4e4b-A893-999539023C41}" Group="" InheritAutoCreateActions="true" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="AdjByte" UID="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{88E1D9C6-0670-47a7-8F5A-60AFD8A95349}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="SysAdjByte" UID="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{7469B5AD-8BD4-4f6e-B79A-5D037854C2F8}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="AdjSByte" UID="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{56270514-D4BF-4254-8712-BB86C9F09F8C}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="SysAdjSByte" UID="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{39373925-E7DF-4829-A958-52578C7C7D46}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="AdjWord" UID="{1DEC549D-99CE-4af5-9102-87366948E77C}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{AAEDB08C-4923-4916-8C71-9DFF0CEB7155}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="SysAdjWord" UID="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{1DEC549D-99CE-4af5-9102-87366948E77C}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{CB8EB60E-5351-4176-9577-A8F74A9D6DB7}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="AdjSWord" UID="{E9A3327F-0383-4428-8072-88C55153EBEE}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{1D1574D8-B16A-4d58-9B64-3CF6790AC978}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+<Class Name="SysAdjSWord" UID="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Group="" InheritAutoCreateActions="true" Image="" Virtual="false" Parentage="0" Base="{E9A3327F-0383-4428-8072-88C55153EBEE}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Alias="IncrementAdjuster" Type="0">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="DecrementAdjuster" Type="0">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Alias="" Type="0">
+<Function-Object Name="Set" UID="{C2AAF0CB-CC5B-4761-BC21-EC4C074BFF23}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+<AutoCreateActions/>
+</Class>
+</Entries>
+</Classes>
+<Timers RemovedUIDsPresent="true">
+<Entries/>
+</Timers>
+<RamStructures RemovedUIDsPresent="true">
+<Entries>
+<RamStructure Name="Global" UID="{0D65583F-CB52-4b1c-A844-8509AE1715F5}" QualifiedName="Global">
+<Object Name="Global" UID="{0D65583F-CB52-4b1c-A844-8509AE1715F5}" Class="{97B8974E-D814-4dff-B506-0C02120D5A02}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="Global Group"/>
+</Prop>
+<Prop Name="GenerateValues">
+<SimpleValueArray Value="true"/>
+</Prop>
+<Prop Name="FactoryDefaultInRom">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="RamType">
+<SimpleValueArray Value=""/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+<RamStructures>
+<RamVariable QualifiedName="Global.CecSystemAudioStatus">
+<Object Name="CecSystemAudioStatus" UID="{A6257078-11DF-4f78-A6B2-94A4E079B600}" Class="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Parentage="2">
+<Properties>
+<Prop Name="Desc">
+<SimpleValueArray Value="if 0 then sound outputs via TV speakers
+if 1 then sound outputs via audio-receiver"/>
+</Prop>
+<Prop Name="Shortcut">
+<SimpleValueArray Value="CecSystemAudioStatus"/>
+</Prop>
+<Prop Name="AdjFunction">
+<SimpleValueArray Value=""/>
+</Prop>
+<Prop Name="Cyclic">
+<SimpleValueArray Value="false"/>
+</Prop>
+<Prop Name="Value">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Min">
+<SimpleValueArray Value="0"/>
+</Prop>
+<Prop Name="Max">
+<SimpleValueArray Value="255"/>
+</Prop>
+<Prop Name="Step">
+<SimpleValueArray Value="1"/>
+</Prop>
+</Properties>
+<Actions/>
+</Object>
+</RamVariable>
+</RamStructures>
+<Instances/>
+</RamStructure>
+</Entries>
+</RamStructures>
+<CompositeEvents RemovedUIDsPresent="true">
+<Entries/>
+</CompositeEvents>
+<Strings RemovedUIDsPresent="true">
+<Entries/>
+</Strings>
+<Objects RemovedUIDsPresent="true">
+<Entries/>
+</Objects>
+<NVRam RemovedUIDsPresent="true" NVRAM-Version="0">
+<Entries>
+<NVRamHeader/>
+</Entries>
+</NVRam>
+</osd>
+<ConfigMgr>
+<Configurations Active="Default">
+<Configuration Name="Default">
+<Configs>
+<CodeGenerator>
+<Configs>
+<Reports>
+<Configs/>
+<ReportTops>
+<Controls>
+<Reports>
+<CLUT Status="false"/>
+<DetailReport Status="false"/>
+<MemMap Status="false"/>
+<StateActionTable Status="false"/>
+<StateResources Status="false"/>
+</Reports>
+</Controls>
+<GlyphTables>
+<Reports>
+<GlyphTable Status="false"/>
+</Reports>
+</GlyphTables>
+<Miscellaneous>
+<Reports>
+<ROMSizes Status="false"/>
+<Summary Status="false"/>
+</Reports>
+</Miscellaneous>
+</ReportTops>
+<ConfigReports-Path Value=".\Reports"/>
+</Reports>
+<BuildConditions>
+<Configs/>
+<BuildConditionStatusMap/>
+</BuildConditions>
+<Languages>
+<Configs/>
+<LanguageStatusMap/>
+</Languages>
+<Keypads>
+<Configs/>
+<KeypadStatusMap/>
+</Keypads>
+<State_Machine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="5"/>
+</Params>
+</State_Machine>
+<Adjuster_Engine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="5"/>
+</Params>
+</Adjuster_Engine>
+<Timer>
+<Configs/>
+<Params>
+<Param QualifiedName="Resolution" Type="enum" Value="1.00"/>
+</Params>
+</Timer>
+<Keystrokes>
+<Configs/>
+<Params>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State Before" Type="enum" Value="false"/>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State After" Type="enum" Value="false"/>
+</Params>
+</Keystrokes>
+<Osd>
+<Configs/>
+<Params>
+<Param QualifiedName="Unicode.Enable UNISCRIBE script" Type="enum" Value="true"/>
+<Param QualifiedName="Rotation.Enable" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Force Tile Color Depth" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Firmware Buffer Size" Type="enum" Value="1024"/>
+<Param QualifiedName="Tile Controls.Allocation" Type="enum" Value="Memory efficient"/>
+<Param QualifiedName="Tile Controls.Tile Id Allocation" Type="enum" Value="Automatic"/>
+<Param QualifiedName="SDRam.Start" Type="int" Value="0"/>
+<Param QualifiedName="SDRam.Size" Type="int" Value="800000"/>
+<Param QualifiedName="Text Controls.Compression.Enable" Type="enum" Value="true"/>
+<Param QualifiedName="Text Controls.Anti Alias Support.Enable" Type="enum" Value="false"/>
+<Param QualifiedName="Color Space" Type="enum" Value="RGB"/>
+</Params>
+</Osd>
+<Additional_Options>
+<Configs/>
+<Params>
+<Param QualifiedName="Number of segments for conditions" Type="int" Value="1"/>
+</Params>
+</Additional_Options>
+</Configs>
+<GenerationConfig-Path Value=".\GenFiles"/>
+</CodeGenerator>
+</Configs>
+</Configuration>
+</Configurations>
+</ConfigMgr>
+<Documents/>
+</Genesis-Workbench-Project>

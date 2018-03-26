@@ -1,0 +1,75 @@
+<Upgrade>
+	<Upgrade-Projects>
+		<Upgrade-Project Path="upgrade.gpr-up"/>
+	</Upgrade-Projects>
+	
+	<RenameEntries>
+		<RamVariables>
+			<Entry Name="PortDependent.Brightness" NewName="PortSchemeDependent.Brightness"/>
+			<Entry Name="PortDependent_PIP.Brightness" NewName="PortSchemeDependent.Brightness"/>
+			<Entry Name="PortDependent.Contrast" NewName="PortSchemeDependent.Contrast"/>
+			<Entry Name="PortDependent_PIP.Contrast" NewName="PortSchemeDependent.Contrast"/>
+			<Entry Name="PortDependent.Saturation" NewName="PortSchemeDependent.Saturation"/>
+			<Entry Name="PortDependent_PIP.Saturation" NewName="PortSchemeDependent.Saturation"/>
+			<Entry Name="PortDependent.Hue" NewName="PortSchemeDependent.Hue"/>
+			<Entry Name="PortDependent_PIP.Hue" NewName="PortSchemeDependent.Hue"/>
+			<Entry Name="PortDependent.UserRed" NewName="PortSchemeDependent.UserRed"/>
+			<Entry Name="PortDependent_PIP.UserRed" NewName="PortSchemeDependent.UserRed"/>
+			<Entry Name="PortDependent.UserGreen" NewName="PortSchemeDependent.UserGreen"/>
+			<Entry Name="PortDependent_PIP.UserGreen" NewName="PortSchemeDependent.UserGreen"/>
+			<Entry Name="PortDependent.UserBlue" NewName="PortSchemeDependent.UserBlue"/>
+			<Entry Name="PortDependent_PIP.UserBlue" NewName="PortSchemeDependent.UserBlue"/>
+			<Entry Name="PortDependent.CustomBrightness" NewName="PortSchemeDependent.Brightness"/>
+			<Entry Name="PortDependent_PIP.CustomBrightness" NewName="PortSchemeDependent.Brightness"/>
+			<Entry Name="PortDependent.CustomContrast" NewName="PortSchemeDependent.Contrast"/>
+			<Entry Name="PortDependent_PIP.CustomContrast" NewName="PortSchemeDependent.Contrast"/>
+			<Entry Name="PortDependent.CustomSaturation" NewName="PortSchemeDependent.Saturation"/>
+			<Entry Name="PortDependent_PIP.CustomSaturation" NewName="PortSchemeDependent.Saturation"/>
+			<Entry Name="PortDependent.ColorTemp" NewName="PortSchemeDependent.ColorTemp"/>
+			<Entry Name="PortDependent_PIP.ColorTemp" NewName="PortSchemeDependent.ColorTemp"/>
+			<Entry Name="ModeIndependent.AcmBlueLumaGain" NewName="PortSchemeDependent.AcmBlueLumaGain"/>
+			<Entry Name="ModeIndependent.AcmCyanLumaGain" NewName="PortSchemeDependent.AcmCyanLumaGain"/>
+			<Entry Name="ModeIndependent.AcmGreenLumaGain" NewName="PortSchemeDependent.AcmGreenLumaGain"/>
+			<Entry Name="ModeIndependent.AcmMagentaLumaGain" NewName="PortSchemeDependent.AcmMagentaLumaGain"/>
+			<Entry Name="ModeIndependent.AcmRedLumaGain" NewName="PortSchemeDependent.AcmRedLumaGain"/>
+			<Entry Name="ModeIndependent.AcmYellowLumaGain" NewName="PortSchemeDependent.AcmYellowLumaGain"/>
+			<Entry Name="ModeIndependent.AcmRedLumaOffs" NewName="PortSchemeDependent.AcmRedLumaOffs"/>
+			<Entry Name="ModeIndependent.AcmGreenLumaOffs" NewName="PortSchemeDependent.AcmGreenLumaOffs"/>
+			<Entry Name="ModeIndependent.AcmBlueLumaOffs" NewName="PortSchemeDependent.AcmBlueLumaOffs"/>
+			<Entry Name="ModeIndependent.AcmYellowLumaOffs" NewName="PortSchemeDependent.AcmYellowLumaOffs"/>
+			<Entry Name="ModeIndependent.AcmMagentaLumaOffs" NewName="PortSchemeDependent.AcmMagentaLumaOffs"/>
+			<Entry Name="ModeIndependent.AcmCyanLumaOffs" NewName="PortSchemeDependent.AcmCyanLumaOffs"/>
+			<Entry Name="ModeIndependent.Acm3BlueHue" NewName="PortSchemeDependent.Acm3BlueHue"/>
+			<Entry Name="ModeIndependent.Acm3CyanHue" NewName="PortSchemeDependent.Acm3CyanHue"/>
+			<Entry Name="ModeIndependent.Acm3GreenHue" NewName="PortSchemeDependent.Acm3GreenHue"/>
+			<Entry Name="ModeIndependent.Acm3MagentaHue" NewName="PortSchemeDependent.Acm3MagentaHue"/>
+			<Entry Name="ModeIndependent.Acm3RedHue" NewName="PortSchemeDependent.Acm3RedHue"/>
+			<Entry Name="ModeIndependent.Acm3YellowHue" NewName="PortSchemeDependent.Acm3YellowHue"/>
+			<Entry Name="ModeIndependent.Acm3BlueSat" NewName="PortSchemeDependent.Acm3BlueSat"/>
+			<Entry Name="ModeIndependent.Acm3CyanSat" NewName="PortSchemeDependent.Acm3CyanSat"/>
+			<Entry Name="ModeIndependent.Acm3GreenSat" NewName="PortSchemeDependent.Acm3GreenSat"/>
+			<Entry Name="ModeIndependent.Acm3MagentaSat" NewName="PortSchemeDependent.Acm3MagentaSat"/>
+			<Entry Name="ModeIndependent.Acm3RedSat" NewName="PortSchemeDependent.Acm3RedSat"/>
+			<Entry Name="ModeIndependent.Acm3YellowSat" NewName="PortSchemeDependent.Acm3YellowSat"/>
+			<Entry Name="ModeIndependent.AcmBlueHue" NewName="PortSchemeDependent.AcmBlueHue"/>
+			<Entry Name="ModeIndependent.AcmCyanHue" NewName="PortSchemeDependent.AcmCyanHue"/>
+			<Entry Name="ModeIndependent.AcmGreenHue" NewName="PortSchemeDependent.AcmGreenHue"/>
+			<Entry Name="ModeIndependent.AcmMagentaHue" NewName="PortSchemeDependent.AcmMagentaHue"/>
+			<Entry Name="ModeIndependent.AcmRedHue" NewName="PortSchemeDependent.AcmRedHue"/>
+			<Entry Name="ModeIndependent.AcmYellowHue" NewName="PortSchemeDependent.AcmYellowHue"/>
+			<Entry Name="ModeIndependent.AcmBlueSat" NewName="PortSchemeDependent.AcmBlueSat"/>
+			<Entry Name="ModeIndependent.AcmCyanSat" NewName="PortSchemeDependent.AcmCyanSat"/>
+			<Entry Name="ModeIndependent.AcmGreenSat" NewName="PortSchemeDependent.AcmGreenSat"/>
+			<Entry Name="ModeIndependent.AcmMagentaSat" NewName="PortSchemeDependent.AcmMagentaSat"/>
+			<Entry Name="ModeIndependent.AcmRedSat" NewName="PortSchemeDependent.AcmRedSat"/>
+			<Entry Name="ModeIndependent.AcmYellowSat" NewName="PortSchemeDependent.AcmYellowSat"/>
+			<Entry Name="ModeIndependent.ACCScheme" NewName="ModeIndependent.ImageScheme"/>
+			<Entry Name="ModeIndependent.ACMScheme" NewName="ModeIndependent.ImageScheme"/>
+			<Entry Name="ModeIndependent.ACCACMScheme" NewName="ModeIndependent.ImageScheme"/>
+			<Entry Name="ModeIndependent.ACM3DColorScheme" NewName="ModeIndependent.ImageScheme"/>
+		</RamVariables>
+	</RenameEntries>
+	
+	<RemoveEntries>
+	</RemoveEntries>
+</Upgrade>

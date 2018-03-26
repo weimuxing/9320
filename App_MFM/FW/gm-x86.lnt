@@ -1,0 +1,22 @@
+// gm-x86.lnt
+
+/*
+Options file for Genesis Microchip Lint Customization
+ */
+
++fsc    // consider string constants as const char *
++fem	  // Type can appear after modifier
++fce	  // Continue on #error directive
+-w2     // Error and Warning messages only
+-e46	  // Suppress field type should be Int/Unsigned int message
+-e641   // Computation operations on enum allowed
+-e537	  // Suppress double inclusion warnings
+-e612   // Type w/o a declarator. OSD Files full of them !
+-e544	  // endif and else w/o EOL
+-e529	  // Unused variables
+-e550	  // Unused parameters
+-e539	  // Suppress indentation warning
+-e655	  // Enum bit-wise operation allowed
+-e545   // Suspicious use of & operator
+
+

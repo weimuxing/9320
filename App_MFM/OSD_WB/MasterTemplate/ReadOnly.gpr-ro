@@ -1,0 +1,5146 @@
+<Genesis-Workbench-Project Version="6" Chip-Name="FLI8532" MasterProjectVersion="0" SepMode="0">
+<osd>
+<BuildConditions RemovedUIDsPresent="true">
+<Entries/>
+</BuildConditions>
+<Events RemovedUIDsPresent="true">
+<Entries>
+<Event Name="OE_EnterState" UID="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" Kind="0" AllowChangeState="true" Parentage="2"/>
+<Event Name="OE_ExitState" UID="{34041793-1D91-47a8-B476-8B3E0B8C358E}" Kind="0" AllowChangeState="true" Parentage="2"/>
+<Event Name="OE_TransitionComplete" UID="{0B3CFB93-5BE1-4010-B561-23D6CE09C5E1}" Kind="0" AllowChangeState="true" Parentage="2"/>
+</Entries>
+</Events>
+<Classes RemovedUIDsPresent="true">
+<Entries>
+<Class Name="StateTree" UID="{178C0F57-58E3-430c-AAAC-53371AD26C29}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Control" UID="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}" Group="" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="SimpleControl" UID="{15ACA86D-D178-4475-B8C5-2915615194FF}" Group="" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="BaseTile" UID="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}" Desc="BaseTile" Group="" Image="Tile.bmp" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Tile" UID="{9CFC148E-5213-4aeb-9148-09EE358C53CD}" Desc="Tile" Group="" Image="Tile.bmp" Virtual="false" Parentage="2" Base="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="DialogId" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Movable" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Attr" Type="tile_attr">
+<TileAttribute>
+<CurrentBpp Value="255"/>
+</TileAttribute>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorAttr" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Background" Type="color">
+<SimpleValueArray Value="16777215"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileAddr" Type="address">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawRect();
+
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AllocationHint" Type="enum">
+<HeaderValue>
+<EnumHeader Values="Default,BandwidthEfficient,MemoryEfficient"/>
+</HeaderValue>
+<EnumValue Value="Default" Index="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="AllocScheme" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Allocate" UID="{BA611AB3-CB6F-4d63-9AE2-C57404264A16}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Deallocate" UID="{758751BD-6E2B-41b3-ACAA-3879E63B7698}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Enable" UID="{9CF97C1E-825D-4df4-AC24-7C60A465ECFA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Disabled" UID="{3BBB01A0-C0E0-4c15-9632-CAF57A657845}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="EnableTransparency" UID="{896C436B-D437-42d9-9680-CA76A8A8B2D4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DisableTransparency" UID="{D1466BF1-D5D6-4452-BD74-7054A023F5B3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="EnableBlinking" UID="{3A313E94-45C6-448a-A7CD-8923FADDE0B6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DisableBlinking" UID="{D4ADECE1-4C87-4df9-BE99-D64EE1455506}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="EnableBlending" UID="{009F4EB0-58A2-418d-8556-17534DB96E01}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DisableBlending" UID="{2E09FE9A-7E67-4e48-88E1-F9319848C3E0}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="TtxControl" UID="{3F05354B-6998-41bd-9B2D-33FB5A303378}" Desc="TTX Control" Group="" Image="" Virtual="false" Parentage="2" Base="{9CFC148E-5213-4aeb-9148-09EE358C53CD}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="15"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="DialogId" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Movable" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="480" YSize="520"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Attr" Type="tile_attr">
+<TileAttribute>
+<CurrentBpp Value="255"/>
+</TileAttribute>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorAttr" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Background" Type="color">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileAddr" Type="address">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawRect();
+
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AllocationHint" Type="enum">
+<HeaderValue>
+<EnumHeader Values="MemoryEfficient,BandwidthEfficient"/>
+</HeaderValue>
+<EnumValue Value="MemoryEfficient" Index="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="AllocScheme" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="AllocationScheme" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="ColorAttrib" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileAddress" Type="address">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="AllocateTile">
+<Function-Object Name="Allocate" UID="{44140B07-A913-4058-93F0-679F5B756935}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="DeallocateTile">
+<Function-Object Name="Deallocate" UID="{8D6A311F-8C72-4c01-8302-C8B59FD0D825}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Enable" UID="{F2AB3BB4-83B0-4e65-83CA-C5D1DA63512F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Disabled" UID="{245BD539-ACA3-4859-BB4C-2A4EC7FA0F2E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="EnableTransparency" UID="{AE1ED32E-A7EF-4ea2-BFA2-696D3A9AEE0A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DisableTransparency" UID="{9706BB53-D029-4ba1-81FF-3BF8BBA7D7EC}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="EnableBlinking" UID="{EB4C026B-A5E6-42be-B417-40E330D931B9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DisableBlinking" UID="{8C469B01-8455-4955-BEC8-133A57F87656}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="EnableBlending" UID="{667AA498-1B87-4696-BF3A-A4D0A6BECE57}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DisableBlending" UID="{629360C1-D39C-4729-AB3A-03F29EA51347}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Disable" UID="{29DB77C7-3029-4506-91AC-0C72B0B6475F}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="TtxTile" UID="{C02E848B-BC10-45d6-9C79-99548F0EE0BD}" Desc="TtxTile" Group="" Image="Tile.bmp" Virtual="false" Parentage="2" Base="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="DialogId" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Movable" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="Attr" Type="byte">
+<SimpleValueArray Value="6"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorAttr" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileAddr" Type="address">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorNum" Type="byte">
+<SimpleValueArray Value="16"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TtxFont" Type="ttxfont">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AllocationHint" Type="enum">
+<HeaderValue>
+<EnumHeader Values="Default,BandwidthEfficient,MemoryEfficient"/>
+</HeaderValue>
+<EnumValue Value="Default" Index="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="AllocScheme" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Create" UID="{47BC04A5-4DFA-4c8d-9A77-9B68203494B8}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Destroy" UID="{EF4EC80A-5938-4835-8DB4-C45C559D856F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Hide" UID="{E7E504E4-33BE-4409-8916-2E7FC54A4CE3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Show" UID="{F4E8A2F5-CAF2-463c-901E-E62E623D3E9C}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="CcTile" UID="{65C6537A-BC76-4a96-B75F-83CB2136CAF8}" Desc="CcTile" Group="" Image="Tile.bmp" Virtual="false" Parentage="2" Base="{5E5F5D49-F3A6-4e02-9437-59BF4F663345}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="tile_id">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="DialogId" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Movable" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="Attr" Type="byte">
+<SimpleValueArray Value="6"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorAttr" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileAddr" Type="address">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorNum" Type="byte">
+<SimpleValueArray Value="17"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="CcFont" Type="ccfont">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AllocationHint" Type="enum">
+<HeaderValue>
+<EnumHeader Values="Default,BandwidthEfficient,MemoryEfficient"/>
+</HeaderValue>
+<EnumValue Value="Default" Index="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="AllocScheme" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Create" UID="{49B13772-51B3-46d7-B25C-22AB7C557B86}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Destroy" UID="{483712D1-78A9-42e5-8565-D270E4C78162}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Hide" UID="{FD2D6CAA-5EB5-4c30-8FE8-0E97C188D3C8}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Show" UID="{68148456-FF0F-413d-8308-BA4AAC3C9AFC}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="ControlRect" UID="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}" Group="" Image="" Virtual="true" Parentage="0" Base="{15ACA86D-D178-4475-B8C5-2915615194FF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{FC5271F3-26D1-4829-8FC5-ABD47549FD66}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Erase" UID="{3A521991-6FCF-4c43-BAA3-D73ED58CF8E5}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="SelectableControl" UID="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}" Group="" Image="" Virtual="true" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Erase" UID="{A9B7E5E6-44C6-4574-A6EA-920C0EE067F2}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelected" UID="{6978B790-B6B5-4528-AAFF-F7C9EDD9DDA6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawDisabled" UID="{EEFEC0FC-E2C2-4302-9090-0458AEC0F082}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="TextButton" UID="{3CEDC15E-FC81-4c8b-8C96-075DA5DB5DEF}" Desc="Text Button" Group="TextControls" Image="Text Button.bmp" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0x52FEF"/>
+</color_state>
+<color_state Name="ColorState2">
+<Entries Background="0xFFFFFF" Foreground="0x969696"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawText">
+<Function-Object Name="Draw" UID="{4F60BF78-6859-4fce-A8AE-420418665781}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{9B87807B-64AE-407e-B5DB-770AC6AFF3DC}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedText">
+<Function-Object Name="DrawSelected" UID="{2E510343-3446-43b1-A2A5-F75096F7D7DD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledText">
+<Function-Object Name="DrawDisabled" UID="{942959E0-78BC-458f-9B0C-CDC1C746EC44}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="VerticalTextButton" UID="{A2008C89-8B32-456a-99AD-4488AF57B9AA}" Desc="Vertical Text Button" Group="TextControls" Image="Vertical Text Button.bmp" Virtual="false" Parentage="2" Base="{3CEDC15E-FC81-4c8b-8C96-075DA5DB5DEF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0x52FEF"/>
+</color_state>
+<color_state Name="ColorState2">
+<Entries Background="0xFFFFFF" Foreground="0x969696"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawTextVertical(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+<Property>
+<Variable Name="VerticalRotated" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawVText">
+<Function-Object Name="Draw" UID="{790CA306-AAA0-453a-B95C-D6F4FCF05D9B}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{0C82E2D6-0E69-488b-B3FA-ED025B841E3B}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedVText">
+<Function-Object Name="DrawSelected" UID="{7472D10A-CED9-42a3-B13C-3328065D5E42}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledVText">
+<Function-Object Name="DrawDisabled" UID="{36B1080C-51BB-473a-838E-C5966BDEBF46}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{A5D8900B-AB13-4165-9525-CA0A969D55FB}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DStaticTextButton" UID="{C7CE85F6-85E0-46b1-8B53-083D11461EC5}" Desc="Text Button" Group="TextControls" Image="Text Button.bmp" Virtual="false" Parentage="2" Base="{3CEDC15E-FC81-4c8b-8C96-075DA5DB5DEF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="ColorState2">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_2" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_3" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_4" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_5" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_6" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_7" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_8" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawOption1DStaticTextButton">
+<Function-Object Name="Draw" UID="{F83AD922-D0F3-4168-AB0C-52A9747E4786}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{16EEBC74-5752-42df-AC11-21331AD34A48}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedOption1DStaticTextButton">
+<Function-Object Name="DrawSelected" UID="{EE025ADC-DA1E-4e19-BFBF-CF9D3763B3B5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledText">
+<Function-Object Name="DrawDisabled" UID="{BBB5E087-E8A4-40fb-B562-49FA489A7466}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{B88E107C-DCC0-4ce8-ABCB-774B848425D6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption1" UID="{E41AE84A-2175-420d-B0DC-823D1EE5D177}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption2" UID="{CE5A3582-4380-4420-B4CA-0C31DEC381C6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption3" UID="{D99AC261-4310-48dd-B555-5AFF0636089B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption4" UID="{D217B5D4-7810-4cc1-8883-A05D0DB50DF2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption5" UID="{B3B0749A-2B14-4da9-B6E1-CAB376E24A27}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption6" UID="{23EDF87F-09D5-4007-98DF-5FFE6B5EF642}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption7" UID="{70DB6F99-8A61-48c2-99A5-30246A00D1FF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption8" UID="{2DC8C3F0-BD28-4ac1-99E8-144247F87478}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption1" UID="{1430347C-BC82-4cf7-BDAF-619B81C90683}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption2" UID="{51CF84FC-9C7D-43b9-AACA-29B7F30BC178}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption3" UID="{8A129EF7-0200-42d4-9206-AC059FE29591}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption4" UID="{9C152D21-0B47-4fd9-BA17-ECB498F753E7}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption5" UID="{91B2E2E6-65B9-4099-A88D-BDB48C95CCE6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption6" UID="{519AF42B-34CC-46db-BB60-DCDAF22A0098}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption7" UID="{2B8B2567-B0A8-4185-8F13-4785BA802503}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelectedOption8" UID="{02EC9050-5AA5-49ad-B1E3-5DF481A0032B}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DStaticTextButtonExt" UID="{121951AE-1ABE-4c3b-A936-8107ABB1A0D2}" Desc="Text Button" Group="TextControls" Image="Text Button.bmp" Virtual="false" Parentage="2" Base="{3CEDC15E-FC81-4c8b-8C96-075DA5DB5DEF}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+<color_state Name="ColorState2">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_2" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_3" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_4" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_5" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_6" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_7" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_8" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_9" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_10" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_11" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_12" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_13" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_14" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_15" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_16" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_17" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_18" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_19" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_20" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_21" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_22" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_23" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_24" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_25" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_26" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_27" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_28" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_29" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_30" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_31" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_32" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawOption1DStaticTextButton">
+<Function-Object Name="Draw" UID="{2FFC74C5-C388-430c-848C-2E8D1B44E588}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{F0967F0A-23D7-43e8-8C5B-DA8B93058EB3}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedOption1DStaticTextButton">
+<Function-Object Name="DrawSelected" UID="{D24648A9-4653-4303-B199-DEA35F76042D}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledText">
+<Function-Object Name="DrawDisabled" UID="{2F1D5BB1-7AA5-4ea7-B84C-FAF2DD668390}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{0C51FA53-05C7-4dd9-910B-AF575CEC2AB9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption1DStaticTextExt">
+<Function-Object Name="DrawOption1" UID="{F509C94E-4678-4356-AB55-B8E15F819441}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption4DStaticTextExt">
+<Function-Object Name="DrawOption4" UID="{9464B8C3-7B87-4b1b-AC3B-8005DBA4B50F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption5DStaticTextExt">
+<Function-Object Name="DrawOption5" UID="{BF449718-1190-4174-9DCC-48C4D9981127}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption6DStaticTextExt">
+<Function-Object Name="DrawOption6" UID="{75D3553C-F25D-4c02-ACD1-B83210593F5C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption7DStaticTextExt">
+<Function-Object Name="DrawOption7" UID="{6A050770-E5EB-4ae7-9B88-F9714A9CD923}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption8DStaticTextExt">
+<Function-Object Name="DrawOption8" UID="{3414F4AA-805E-4b4e-BAB3-905804ACCAD7}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption9DStaticTextExt">
+<Function-Object Name="DrawOption9" UID="{4BA082CA-2C07-4a76-89A5-D09770396CCD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption10DStaticTextExt">
+<Function-Object Name="DrawOption10" UID="{A70A31BD-81C7-4fd3-98F9-D64EDE497A33}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption11DStaticTextExt">
+<Function-Object Name="DrawOption11" UID="{E862AD47-F5BF-4ce8-AEB4-28944DBAA387}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption12DStaticTextExt">
+<Function-Object Name="DrawOption12" UID="{4188ABA1-918F-46f5-A613-9E7D7FB64F57}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption13DStaticTextExt">
+<Function-Object Name="DrawOption13" UID="{2EE83949-86CB-439b-9CAF-D7E1C22CB6FE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption14DStaticTextExt">
+<Function-Object Name="DrawOption14" UID="{8E7C7901-3BB2-4e27-806D-FFAA2D316E88}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption15DStaticTextExt">
+<Function-Object Name="DrawOption15" UID="{2F76BF9F-1CCE-4f4f-AB5D-93EE24ECFA73}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption16DStaticTextExt">
+<Function-Object Name="DrawOption16" UID="{ACF7B57D-C73E-45f3-BCF6-5EDC3DF4E9AB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption17DStaticTextExt">
+<Function-Object Name="DrawOption17" UID="{42488F2B-AA5D-4cb5-955B-6A284E900ED7}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption18DStaticTextExt">
+<Function-Object Name="DrawOption18" UID="{5D2341E4-69B8-4b66-911C-A406EE0A808C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption19DStaticTextExt">
+<Function-Object Name="DrawOption19" UID="{2CD84F11-C18A-43ca-8D0A-45D122EB93DA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption20DStaticTextExt">
+<Function-Object Name="DrawOption20" UID="{2FCA84AF-084B-47ec-8D71-BFF339398F4F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption21DStaticTextExt">
+<Function-Object Name="DrawOption21" UID="{647F6772-17EA-4f44-9C88-57E2021F03F5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption22DStaticTextExt">
+<Function-Object Name="DrawOption22" UID="{406C01CF-A251-4284-9116-2A0964074703}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption23DStaticTextExt">
+<Function-Object Name="DrawOption23" UID="{BFC1E63A-CE11-4c18-8258-CC502E56F026}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption24DStaticTextExt">
+<Function-Object Name="DrawOption24" UID="{2C65B463-1F4B-480c-B956-877F42431121}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption25DStaticTextExt">
+<Function-Object Name="DrawOption25" UID="{160FE0AA-06D3-4647-864B-E49E8B096C05}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption26DStaticTextExt">
+<Function-Object Name="DrawOption26" UID="{26547CB3-E0F1-4cb3-B268-0607A4084907}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption27DStaticTextExt">
+<Function-Object Name="DrawOption27" UID="{37BE0957-B427-4b8b-B41E-4F586C90F0BB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption28DStaticTextExt">
+<Function-Object Name="DrawOption28" UID="{C99182A7-6610-4512-A850-B079580504BE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption29DStaticTextExt">
+<Function-Object Name="DrawOption29" UID="{0B32CF63-ED8D-4f46-99E4-D9533CFBA2E3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption30DStaticTextExt">
+<Function-Object Name="DrawOption30" UID="{B6C20EA5-EB87-4b10-B2B8-B17EFC972C75}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption31DStaticTextExt">
+<Function-Object Name="DrawOption31" UID="{19C59DB2-3715-49cf-9F08-4FC429E575BD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption32DStaticTextExt">
+<Function-Object Name="DrawOption32" UID="{EA90D0AA-1431-4dc6-AADD-7828FA3E7A46}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption1DStaticTextButton">
+<Function-Object Name="DrawSelectedOption1" UID="{B59D16CB-3EC1-41b2-A26F-BA944CCE72E9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption2DStaticTextButton">
+<Function-Object Name="DrawSelectedOption2" UID="{6FA4BAC7-5072-4f80-8F47-3803A0CDD4A7}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption3DStaticTextButton">
+<Function-Object Name="DrawSelectedOption3" UID="{6C15F9DE-D5C9-49d6-BB09-D5C6947CEB9E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption4DStaticTextButton">
+<Function-Object Name="DrawSelectedOption4" UID="{943AD1A0-EA70-495d-97A5-5B7BAFEE43B0}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption5DStaticTextButton">
+<Function-Object Name="DrawSelectedOption5" UID="{2BF59BCB-3135-444b-B59A-63A94563029C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption6DStaticTextButton">
+<Function-Object Name="DrawSelectedOption6" UID="{ED6BECB3-3691-41ef-BFA5-5F7E483DE186}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption7DStaticTextButton">
+<Function-Object Name="DrawSelectedOption7" UID="{7BC63809-68B4-4c1e-9F45-41C62273FB4E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption8DStaticTextButton">
+<Function-Object Name="DrawSelectedOption8" UID="{81050C9E-C7F4-43e5-B594-A232029193AA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption9DStaticTextButton">
+<Function-Object Name="DrawSelectedOption9" UID="{935BC9B4-7252-461f-A314-83AB8CEEB40C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption10DStaticTextButton">
+<Function-Object Name="DrawSelectedOption10" UID="{8A062C84-CD64-4fd4-BC42-9C04B5322D6A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption11DStaticTextButton">
+<Function-Object Name="DrawSelectedOption11" UID="{9F065D33-C507-4904-9DD8-7F3950422A3F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption12DStaticTextButton">
+<Function-Object Name="DrawSelectedOption12" UID="{4185101E-E2BB-4787-9EF3-F143D059B3A9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption13DStaticTextButton">
+<Function-Object Name="DrawSelectedOption13" UID="{268BF834-225D-4c84-B08D-F9B79BF3F461}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption14DStaticTextButton">
+<Function-Object Name="DrawSelectedOption14" UID="{3EF4A7BA-B89C-436d-BFCA-3096B331B48F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption15DStaticTextButton">
+<Function-Object Name="DrawSelectedOption15" UID="{F9389958-A2CA-49ac-AA91-1897562C7E21}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption16DStaticTextButton">
+<Function-Object Name="DrawSelectedOption16" UID="{0C8B0253-915B-453d-BCF0-23B9F0D8C5FA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption17DStaticTextButton">
+<Function-Object Name="DrawSelectedOption17" UID="{89183CC6-88E9-494b-81FD-041B645DF077}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption18DStaticTextButton">
+<Function-Object Name="DrawSelectedOption18" UID="{6C7287B1-0856-47aa-BF8A-3AC40D616EE1}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption19DStaticTextButton">
+<Function-Object Name="DrawSelectedOption19" UID="{596BDC48-A26B-4757-A2F4-9A772F50F980}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption20DStaticTextButton">
+<Function-Object Name="DrawSelectedOption20" UID="{2147A3FD-4032-4f8b-80C4-44F9D2015856}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption21DStaticTextButton">
+<Function-Object Name="DrawSelectedOption21" UID="{CB9E893C-831C-4918-B437-2BB9B6194D22}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption22DStaticTextButton">
+<Function-Object Name="DrawSelectedOption22" UID="{2B7B891B-622B-42c5-91C0-EB61157D504B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption23DStaticTextButton">
+<Function-Object Name="DrawSelectedOption23" UID="{1016A0FD-3D83-48fa-922E-881CD1FC64F7}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption24DStaticTextButton">
+<Function-Object Name="DrawSelectedOption24" UID="{F25CADBD-319F-4c06-8EEA-B71A1040ADFC}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption25DStaticTextButton">
+<Function-Object Name="DrawSelectedOption25" UID="{4A6F0EAD-B98A-4127-BF5D-C1ADC6A9A113}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption26DStaticTextButton">
+<Function-Object Name="DrawSelectedOption26" UID="{D523371D-CD36-44fe-B5DB-463B010AB1AA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption27DStaticTextButton">
+<Function-Object Name="DrawSelectedOption27" UID="{32315700-C111-4a09-BEC2-2D4BCCB9DCB3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption28DStaticTextButton">
+<Function-Object Name="DrawSelectedOption28" UID="{09618DC2-3867-4455-A9DC-66CAB7D0CF34}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption29DStaticTextButton">
+<Function-Object Name="DrawSelectedOption29" UID="{59DC8177-71F4-4fe3-9A27-F37B87980968}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption30DStaticTextButton">
+<Function-Object Name="DrawSelectedOption30" UID="{A6D3C223-A396-4cd5-A20E-401F5A1DC88B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption31DStaticTextButton">
+<Function-Object Name="DrawSelectedOption31" UID="{6C444DFF-B120-4a0c-804F-1C2D17089C57}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawSelectedOption32DStaticTextButton">
+<Function-Object Name="DrawSelectedOption32" UID="{88974609-79AE-4c1c-8411-55D42596D974}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption2DStaticTextExt">
+<Function-Object Name="DrawOption2" UID="{43132CD8-10E5-4fcd-A31E-D5901ACE1063}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawOption3DStaticTextExt">
+<Function-Object Name="DrawOption3" UID="{E8D6396C-FCF7-471a-8CFA-38B47D634745}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="BitmapButton" UID="{51A58EFD-A330-4f9a-8F87-337392C99E42}" Desc="Bitmap Button" Group="BitmapControls" Image="Bitmap Button.bmp" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="bmp_colorinfo">
+<BitmapColorInfo File="" Upgr="true">
+<ClrState Name="Unselected"/>
+<ClrState Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+</ClrState>
+</BitmapColorInfo>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawBitmap( Obj.Colors.FileName );
+
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawBitmap">
+<Function-Object Name="Draw" UID="{64D1D653-B1C2-40e1-B039-E2FE613607ED}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{4A6F0813-5764-426e-BF45-7DB192443931}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedBitmap">
+<Function-Object Name="DrawSelected" UID="{AB6BF3D4-5317-4883-B141-DB47C0E9DA4F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledBitmap">
+<Function-Object Name="DrawDisabled" UID="{70951AF3-36C8-4570-A6B8-DEABC1A72CBE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="SliderButton" UID="{9E7D8536-BD3D-4be6-B398-28856E3D6007}" Desc="SliderButton" Group="SliderControls" Image="SliderButton.bmp" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Direction" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913" Foreground1="0x0"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0x52FEF" Foreground1="0xB1B1B1"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="BorderWidth" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	var rect = ObjRect.Clone();
+	rect.Left += 1;
+	rect.Top += 2;
+	rect.Bottom -= 2;
+	rect.Right -= rect.Right/3;
+	
+	DrawRect(ObjRect, 0,Background);
+	DrawRect(rect, Foreground, Foreground);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawSlider">
+<Function-Object Name="Draw" UID="{A5345502-6F1A-484b-B8C3-054E178A08B3}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{0D8CE8C2-FFD0-47fd-ACA9-55161AD9EC59}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedSlider">
+<Function-Object Name="DrawSelected" UID="{3F77D0AC-0AEE-4563-B68C-6F37FBFD1B51}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledSlider">
+<Function-Object Name="DrawDisabled" UID="{F59C62C3-4842-4f62-8DCD-786C625B625B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateSlider">
+<Function-Object Name="Update" UID="{62DA75BC-A6D6-468f-AEB6-AFB555FBC339}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateSelectedSlider">
+<Function-Object Name="UpdateSelected" UID="{F54598F8-2208-4ffb-99CB-EEE52499E32B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateDisabledSlider">
+<Function-Object Name="UpdateDisabled" UID="{E58BC7CE-1E55-4a35-AE16-5A9FAAE12ADF}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="VerticalSliderButton" UID="{ABA7F836-ACDF-45aa-AE88-3388FB708156}" Desc="Vertical Slider Button" Group="SliderControls" Image="VerticalSliderButton.bmp" Virtual="false" Parentage="2" Base="{9E7D8536-BD3D-4be6-B398-28856E3D6007}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Direction" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0x0" Foreground1="0x0"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0x0" Foreground="0xFFFFFF" Foreground1="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="BorderWidth" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	var rect = ObjRect.Clone();
+    rect.Left += 2;
+    rect.Top += 1;
+    rect.Right -= 2;
+    rect.Bottom -= rect.Bottom/3;
+  
+    DrawRect(ObjRect, 0,Background);
+    DrawRect(rect, Foreground, Foreground);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawVSlider">
+<Function-Object Name="Draw" UID="{E75F500E-4EA4-4106-9829-5C400F723ADF}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{73902546-B0BF-4546-9FB8-9905400CA6FE}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedVSlider">
+<Function-Object Name="DrawSelected" UID="{334D165F-0205-4f28-9321-3B4CE5542954}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledVSlider">
+<Function-Object Name="DrawDisabled" UID="{1F631604-94C2-4caf-9029-E434394BEDAF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{32FD9364-0DB1-43d2-A747-ADBA9DFC68F5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateVSlider">
+<Function-Object Name="Update" UID="{32BDF2B4-1FFE-4004-8174-F5A5D1D855B2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateSelectedVSlider">
+<Function-Object Name="UpdateSelected" UID="{729527D5-FB76-4c88-8DBE-9F9E407986C1}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateDisabledVSlider">
+<Function-Object Name="UpdateDisabled" UID="{64AA9927-C04D-4d9a-A186-644F0F2DA7AF}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="RectangleButton" UID="{27C3FD18-581C-4186-9711-616BD857B6A5}" Group="FrameControls" Image="RectangleButton.bmp" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="ColorSizeFixed" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xB1B1B1"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="BorderWidth" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect(ObjRect, 0);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawRectangle">
+<Function-Object Name="Draw" UID="{85757722-1CB6-489c-A55B-C7EE2712446B}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{AEE7740D-066F-4316-A65D-66BA1B57241E}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedRectangle">
+<Function-Object Name="DrawSelected" UID="{E06A5168-7693-4aa7-B55C-02EE1F3443D9}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledRectangle">
+<Function-Object Name="DrawDisabled" UID="{8E785CA7-65BA-40af-AC34-11B80BD37160}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="LongValueButton" UID="{C10C52FC-16D8-4216-9D73-60689BA40192}" Desc="Long Value" Group="LongValueControls" Image="LongValueButton.bmp" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="UsedGlyphs" Type="used_glyphs">
+<SimpleValueArray Value="48,49,50,51,52,53,54,55,56,57,32,43,45,37"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MinValue" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MaxValue" Type="short">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+<color_state Name="Selected">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+<Entries Background="0xFFFFFF" Foreground="0x52FEF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect();
+	DrawText(&quot;\u0030&quot;);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="MaxString" Type="byte">
+<SimpleValueArray Value="14"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawLongValue">
+<Function-Object Name="Draw" UID="{80CAC3D6-712F-4177-A81F-6B31D6C4610E}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{EFF589C2-50A6-4244-AFEC-23FB74B980EB}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedLongValue">
+<Function-Object Name="DrawSelected" UID="{36B3916E-644C-452d-BE91-92958E439E61}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledLongValue">
+<Function-Object Name="DrawDisabled" UID="{7D717883-CDD9-400d-84B9-A9E95E4DC56A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateLongValue">
+<Function-Object Name="Update" UID="{D6527EB2-445A-4556-90A0-8E07DDF346FD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateDisabledLongValue">
+<Function-Object Name="UpdateDisabled" UID="{781A4DF9-AF38-4484-9D40-D139B0BA83BD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateSelectedLongValue">
+<Function-Object Name="UpdateSelected" UID="{AE0B2C35-265E-477a-A652-A644DFE56333}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="BitmapSliderButton" UID="{06B283B5-8B0A-4bb9-BE33-1AD1BFB90ED1}" Desc="BitmapSliderButton" Group="SliderControls" Image="SliderBitmapButton.bmp" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="bmp_colorinfo">
+<BitmapColorInfo File="" Upgr="true">
+<ClrState Name="ColorState0"/>
+<ClrState Name="ColorState1">
+<Flags>
+<Flag Name="Selected" Value="true"/>
+</Flags>
+</ClrState>
+<ClrState Name="ColorState2"/>
+</BitmapColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="Direction" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	var rect = ObjRect.Clone();
+	rect.Left += rect.Width/4;
+	rect.Right -= rect.Width/4;
+	DrawBitmap( Obj.Colors.FileName, rect );
+	//var Background = Obj.Colors.BitmapColor(2);
+	var Background = 0xA0A0A0;
+	
+	DrawRect(ObjRect, 0,Background);
+	DrawBitmap( Obj.Colors.FileName, rect );
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawBitmapSlider">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{A9B7E5E6-44C6-4574-A6EA-920C0EE067F2}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="DrawSelectedBitmapSlider">
+<Function-Object Name="DrawSelected" UID="{6978B790-B6B5-4528-AAFF-F7C9EDD9DDA6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DrawDisabledBitmapSlider">
+<Function-Object Name="DrawDisabled" UID="{EEFEC0FC-E2C2-4302-9090-0458AEC0F082}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{56A28778-6A18-4a36-B52E-4C8A30ACD88E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateBitmapSlider">
+<Function-Object Name="Update" UID="{60B2EA61-5106-42a6-8750-9358F47905B2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateSelectedBitmapSlider">
+<Function-Object Name="UpdateSelected" UID="{F815AB1D-57F2-41eb-9BB4-6A2976F9AFBE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateDisabledBitmapSlider">
+<Function-Object Name="UpdateDisabled" UID="{8F59583C-8BFB-4b6f-8DAA-3154D52DCD38}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="UnicodeRangeText" UID="{B5167CA0-65F5-421a-B914-E226407E6FB1}" Group="" Image="" Virtual="false" Parentage="2" Base="{2B328EC7-D012-4fc3-993D-5E3627EFBA62}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="UnicodeRange" Type="dynamic_glyphs">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect();
+	DrawText(&quot;\u0030&quot;);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="PtrSegment" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="PtrOffset" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{D926DF17-8B18-415f-8856-229E07C2404F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Erase" UID="{81B5E386-49DE-4273-A8C3-B8F124457CC4}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelected" UID="{EF21361C-E056-45f9-8788-F3EB270B897E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawDisabled" UID="{B4362AF5-D984-4292-BD09-706C31498C16}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{6D1A819A-DBF1-45b1-9AD7-64610DE45642}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="LongValue" UID="{A589A744-6970-4af9-9B7E-9DEF70F99F75}" Desc="Long Value" Group="LongValueControls" Image="LongValue.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="UsedGlyphs" Type="used_glyphs">
+<SimpleValueArray Value="48,49,50,51,52,53,54,55,56,57,32,43,45,37"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MinValue" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MaxValue" Type="short">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect();
+	DrawText(&quot;\u0030&quot;);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="MaxString" Type="byte">
+<SimpleValueArray Value="14"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{3D1BE8CB-9979-46e2-A23C-A74CE651FF50}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Update" UID="{5FF86A2D-530A-4193-8E6E-D758FD5DDBA0}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="MovableLongValue" UID="{89BE3860-D4AA-4e40-AFE4-2C8A754CA080}" Desc="Long Value" Group="LongValueControls" Image="LongValue.bmp" Virtual="false" Parentage="2" Base="{A589A744-6970-4af9-9B7E-9DEF70F99F75}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="UsedGlyphs" Type="used_glyphs">
+<SimpleValueArray Value="48,49,50,51,52,53,54,55,56,57,32,43,45,37"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MinValue" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MaxValue" Type="short">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect();
+	DrawText(&quot;\u0030&quot;);
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="MaxString" Type="byte">
+<SimpleValueArray Value="14"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="XOffset" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="YOffset" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{AD75FF02-C0E0-4722-8E32-1553B68DC61E}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{12C0CD0D-215B-4109-A086-1FC177140B17}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Update" UID="{A02B903E-A7DF-4b8f-A0F6-5AC77EDBA56E}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Rectangle" UID="{466F82F2-5F4C-422d-B2C5-C7896D82C0AE}" Group="FrameControls" Image="" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="true"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Icon" Type="file">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="ColorSizeFixed" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="BorderWidth" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect(ObjRect, 0);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{8A04ECE6-00E5-43a5-8CF6-AF38476B08AF}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="TimingInfo" UID="{7128D5D8-9006-4d14-B2BA-D6DB38B2B7E8}" Desc="Timing Info" Group="TimingControls" Image="TimingInfo.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="UsedGlyphs" Type="used_glyphs">
+<SimpleValueArray Value="48,49,50,51,52,53,54,55,56,57,32,46,120,75,72,122,64"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="MaxString" Type="byte">
+<SimpleValueArray Value="14"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Channel" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawText(&quot;1024x768@100 Hz&quot;, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{0A42F36D-F419-436b-80DD-2D384D57BB63}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawResolution" UID="{97158A04-1952-4bf1-887F-F956A9DF0803}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawVFreq" UID="{4C022EE3-B330-4211-94E4-C0D2C8862993}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawHFreq" UID="{DABD7FCE-970D-4ba0-8045-A067FB1A004B}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Bitmap" UID="{A5759734-BBE0-4096-A90C-33A55F1080F3}" Desc="Bitmap" Group="BitmapControls" Image="Bitmap.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="bmp_colorinfo">
+<BitmapColorInfo File="" Upgr="true">
+<ClrState Name="Unselected"/>
+</BitmapColorInfo>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawBitmap( Obj.Colors.FileName );
+
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{B18560D3-7553-4aad-9690-610135F4B0DC}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Slider" UID="{5C90CD47-D924-48eb-9FD8-AA7FF9A4257C}" Desc="Slider" Group="SliderControls" Image="Slider.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Direction" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913" Foreground1="0x0"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="BorderWidth" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	var rect = ObjRect.Clone();
+	rect.Left += 1;
+	rect.Top += 2;
+	rect.Bottom -= 2;
+	rect.Right -= rect.Right/3;
+	
+	DrawRect(ObjRect, 0,Background);
+	DrawRect(rect, Foreground, Foreground);
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{996C95B5-DF40-4793-B1F0-3114B700A183}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Update" UID="{2941A1CE-994C-47f9-862B-2E80FC99DFAA}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="VerticalSlider" UID="{A70FA4A9-82DD-4ff8-84FD-1420DB7010F3}" Desc="Vertical Slider" Group="SliderControls" Image="VerticalSlider.bmp" Virtual="false" Parentage="2" Base="{5C90CD47-D924-48eb-9FD8-AA7FF9A4257C}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="48"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Direction" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0x0" Foreground1="0x0"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="BorderWidth" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	var rect = ObjRect.Clone();
+    rect.Left += 2;
+    rect.Top += 1;
+    rect.Right -= 2;
+    rect.Bottom -= rect.Bottom/3;
+  
+    DrawRect(ObjRect, 0,Background);
+    DrawRect(rect, Foreground, Foreground);
+}
+
+</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawVSlider">
+<Function-Object Name="Draw" UID="{DD7E7176-6A9B-47e3-90BF-14DCD6A6BE34}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{B10728BC-FD46-428a-8D6D-4A874CF9E0E5}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="UpdateVSlider">
+<Function-Object Name="Update" UID="{3FC0A1F6-71CB-4d6a-AACD-7AB3B1BE3D42}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Text" UID="{E8287237-8D85-4f9b-BAA0-BDB9A5195F4F}" Desc="Static Text" Group="TextControls" Image="Static Text.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawRect();
+
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{CF266F18-3917-4939-8CC7-2D14658CA04B}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="VerticalText" UID="{53D3F02F-B56C-4924-BECD-DBE1F8D34196}" Desc="Vertical Static Text" Group="TextControls" Image="Vertical Static Text.bmp" Virtual="false" Parentage="2" Base="{E8287237-8D85-4f9b-BAA0-BDB9A5195F4F}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xB08913"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	DrawRect();
+	DrawTextVertical(Obj.Text, Obj.Font, ObjRect);
+}</DrawScript>
+</Variable>
+</Property>
+<Property>
+<Variable Name="VerticalRotated" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawVText">
+<Function-Object Name="Draw" UID="{151992AF-1D4B-4125-8B59-FE0F07C0C798}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{07DBE13E-E6EA-400a-88C3-8A637E10E16D}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DStaticText" UID="{A38DD3DE-36D1-4219-8CEC-E1F6FF9D8698}" Desc="Static Text" Group="TextControls" Image="Static Text.bmp" Virtual="false" Parentage="2" Base="{E8287237-8D85-4f9b-BAA0-BDB9A5195F4F}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawRect();
+
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_2" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_3" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_4" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_5" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_6" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_7" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_8" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawOption1DStaticText">
+<Function-Object Name="Draw" UID="{F45081F9-CABB-4f20-87C6-9E4D707B794E}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{9C1B9C0F-F058-4fb9-94D6-0F018AF91029}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption1" UID="{7EEDEDBE-8A0C-4f55-BD22-575F0FEA33BF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption2" UID="{8C6BE7EC-9F7A-44bb-86F5-512FF3E8A1EA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption3" UID="{A64E54C5-FF7D-4e2b-BE9C-CF20D977814C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption4" UID="{25D6CD87-CB0B-4721-81DB-3B9005A0E8FF}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption5" UID="{BFF93349-81F3-43b6-AEA9-7F884EE184B3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption6" UID="{913A190F-CF43-4349-BD57-2E3D98779CFE}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption7" UID="{11B3D178-949C-4dd4-9A93-40D5AE12172E}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption8" UID="{DA6555AB-B296-4a99-8608-534C886DE181}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DStaticTextExt" UID="{EA25C818-8CA4-4488-B20E-B5A7D5477CEA}" Desc="Static Text" Group="TextControls" Image="Static Text.bmp" Virtual="false" Parentage="2" Base="{E8287237-8D85-4f9b-BAA0-BDB9A5195F4F}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Text" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+
+{
+
+	DrawRect();
+
+	DrawText(Obj.Text, Obj.Font, ObjRect);
+
+}</DrawScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_2" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_3" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_4" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_5" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_6" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_7" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_8" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_9" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_10" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_11" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_12" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_13" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_14" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_15" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_16" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_17" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_18" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_19" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_20" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_21" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_22" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_23" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_24" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_25" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_26" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_27" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_28" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_29" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_30" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_31" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Text_32" Type="unicode">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="DrawOption1DStaticTextExt">
+<Function-Object Name="Draw" UID="{E3D22D33-94C3-4001-885B-35F961A63C57}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{81CA57F6-0654-4e1f-8E91-76FA5846F494}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption1" UID="{E03FB968-8E1D-44a6-AB6F-3A773F0931C0}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption2" UID="{61B38D6C-6967-478f-B3EA-EE3EDC09A195}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption3" UID="{97803EF6-84BF-4dfa-B30D-C6DE505E77F2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption4" UID="{6F6EEF45-17AD-42da-B32A-E5CCF67F961C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption5" UID="{F28596F9-1555-412b-A884-B315E9079A76}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption6" UID="{F26AF85B-16F6-4547-92BB-D85AF9F26E77}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption7" UID="{73A68645-7753-4cc5-9581-F18311053A35}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption8" UID="{2328650E-B104-48e7-A8ED-326FA316BF21}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption9" UID="{8EBF34A4-18AC-485d-B86A-86514A4C7835}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption10" UID="{A3801A5B-088F-486e-8AA0-C567341D7F38}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption11" UID="{2DA7D340-F734-468d-846E-13518A2A4BE8}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption12" UID="{76C635F7-52A6-4788-B4E0-00AE1E5E7209}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption13" UID="{828FC450-4CA4-4f4a-A43C-4CBC076B2522}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption14" UID="{E19021BD-5AF4-45fb-992A-D6012E536157}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption15" UID="{698ABF95-B466-49d6-9577-9DA5EE790CC8}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption16" UID="{818456F2-7A8A-455d-AB49-B0F3ECA1D5AC}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption17" UID="{95DB332C-20E4-4fab-B9D8-E6F6492354AA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption18" UID="{7056E626-8ED2-4c65-AC77-8FD8EEB87513}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption19" UID="{8BC0B4D3-7261-406d-9C2A-60ABC6734A5A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption20" UID="{EBC322D3-0EF1-4765-A1B8-F00154F811FD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption21" UID="{60ECBDA7-C9FC-449c-88A8-6D72A0DB9288}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption22" UID="{809C3B29-9269-471d-B1E0-DCF119368B35}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption23" UID="{A8581F51-B50D-47ce-B3A3-2316761EC590}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption24" UID="{1A2C1A4D-B88C-4db8-A806-15EC6C840223}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption25" UID="{09FB1DF3-7ED3-4fe4-8406-E4DD53CC980C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption26" UID="{4487EF50-10E8-49c5-B8DA-6776A1C2C2CA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption27" UID="{A1ECBEF8-5FE2-4a78-9202-B06BE67E3F9C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption28" UID="{F488CD0F-F69E-4058-85B2-5A179CDCF67B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption29" UID="{2677872D-9D17-4f46-A7DE-E316CE3FA10C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption30" UID="{8924EA8A-314C-4504-8A92-BA07A50BC22B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption31" UID="{51B16843-E922-4c56-8628-37B4EECD66C3}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawOption32" UID="{1505ED73-5674-4382-A9FD-3ABF7D7F2BD4}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="BitmapSlider" UID="{6502C5E5-1A47-40aa-BA97-71DD59A9CCAF}" Desc="BitmapSlider" Group="SliderControls" Image="SliderBitmap.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="1" YSize="1"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="bmp_colorinfo">
+<BitmapColorInfo File="" Upgr="true">
+<ClrState Name="Unselected"/>
+</BitmapColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Associate" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Direction" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DrawScript" Type="draw_script">
+<DrawScript Languange="0">function main()
+{
+	var rect = ObjRect.Clone();
+	rect.Left += rect.Width/4;
+	rect.Right -= rect.Width/4;
+	DrawBitmap( Obj.Colors.FileName, rect );
+	//var Background = Obj.Colors.BitmapColor(2);
+	var Background = 0xA0A0A0;
+	
+	DrawRect(ObjRect, 0,Background);
+	DrawBitmap( Obj.Colors.FileName, rect );
+}</DrawScript>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{E3E92F9C-61FC-4c39-B4E0-22DB76468B76}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{A9B7E5E6-44C6-4574-A6EA-920C0EE067F2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Update" UID="{4022DC50-D9A7-42d1-825C-76E79259988B}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="DynamicText" UID="{72A8DC63-D45B-4370-AD25-19DDF76A0EE2}" Desc="Dynamic Text" Group="TextControls" Image="Dynamic Text.bmp" Virtual="false" Parentage="2" Base="{78BD0B03-F4A7-4c33-9BFF-781F4F20E3D9}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" QuickEditProperty="Colors" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="TileId" Type="ctrl_tile_id">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="12" YSize="18"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="EraseColorIndex" Type="color_index">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Colors" Type="colorinfo">
+<ColorInfo>
+<color_state Name="Unselected">
+<Entries Background="0xFFFFFF" Foreground="0xFFFFFF"/>
+</color_state>
+</ColorInfo>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Horizontal" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Vertical" Type="alignment">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Font" Type="font">
+<FontRef Kind="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="MaxString" Type="byte">
+<SimpleValueArray Value="15"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="UsedGlyphs" Type="used_glyphs">
+<SimpleValueArray Value="32,33,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,63,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,232,233,238,252"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="PtrSegment" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="PtrOffset" Type="association">
+<PointerValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="true" Alias="">
+<Function-Object Name="Draw" UID="{AD759783-7E09-4aad-9D61-74AC8D962C7F}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{34041793-1D91-47a8-B476-8B3E0B8C358E}" AutoCreationIntoParent="true" Alias="EraseControl">
+<Function-Object Name="Erase" UID="{14B996BF-ECC2-470e-91AC-3297DD3379A3}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawSelected" UID="{4F506A62-0E07-4240-B315-4BDCA00C1D56}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="DrawDisabled" UID="{DABAF1C9-8C44-4d5f-96E6-7CCE592B38CD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="FreeHighlightWindow">
+<Function-Object Name="FreeHighlightWindow" UID="{9AF79E0B-FD73-413e-8847-7820A1573D2F}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Canvas" UID="{D1BCE7CF-7600-4210-950F-8AE3A1AB63F4}" Group="" Image="" Virtual="true" Parentage="0" Base="{CFEBF492-27A8-4b6f-8ECE-36B661395E6D}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="LoadColors" UID="{07C94700-CF48-40d0-8CB6-4F6FD24BB472}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Dialog" UID="{474BC4E7-1DEA-44bd-A544-01E14F3A3255}" Group="" Image="" Virtual="false" Parentage="2" Base="{D1BCE7CF-7600-4210-950F-8AE3A1AB63F4}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="true" CanBeTopmost="true" IsState="true" GenerateControlData="true" CanBeIntersected="true"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="DialogId" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="Rect" Type="rect">
+<HeaderValue>
+<RectHeader XPos="0" FixedXPos="true" YPos="0" FixedYPos="true"/>
+</HeaderValue>
+<RectTemplValue XPos="0" YPos="0" XSize="16" YSize="16"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="MaxXpos" Type="xposition">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="MaxYpos" Type="yposition">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="HPositionRef" Type="osd_position">
+<OSDPosition Value="" FixedPosition="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="VPositionRef" Type="osd_position">
+<OSDPosition Value="" FixedPosition="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="DimType" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Icon" Type="file">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="FragmNum" Type="loadable_colors_num">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorRef" Type="loadable_colors">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="CreationScript" Type="creation_script">
+<CreationScript>&lt;CreateObject ClassName = &quot;Tile&quot;/&gt;</CreationScript>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="XScalePercent" Type="osd_position">
+<OSDPosition Value="" FixedPosition="true"/>
+</Variable>
+</Property>
+<Property User="true" Persist="true">
+<Variable Name="YScalePercent" Type="osd_position">
+<OSDPosition Value="" FixedPosition="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="LoadColors" UID="{7BE85F57-F090-4156-BDDF-DCD9B6056902}"/>
+</Action>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="SetActive" UID="{C6E1CF3D-F9F1-4cb8-97B5-76ED8B055D4F}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="State" UID="{D4941D94-949C-4582-849D-490B828AE157}" Group="" Image="" Virtual="true" Parentage="0" Base="{178C0F57-58E3-430c-AAAC-53371AD26C29}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="TopMostState" UID="{8F69F46E-5491-4b82-8BD0-9FD4FE606527}" Group="" Image="" Virtual="false" Parentage="0" Base="{D4941D94-949C-4582-849D-490B828AE157}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="true" CanBeTopmost="true" IsState="true" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="InvisibleState" UID="{92C073A3-104F-4411-A9AB-6EA096DD48E1}" Group="" Image="" Virtual="false" Parentage="2" Base="{D4941D94-949C-4582-849D-490B828AE157}">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="true" GenerateControlData="true" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="FragmNum" Type="loadable_colors_num">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property Persist="true">
+<Variable Name="ColorRef" Type="loadable_colors">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" Event="{7E28E68B-5BB9-4e37-806C-5EC909A6C68E}" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="LoadColors" UID="{63293FB6-3A74-4358-A5A6-F89BB8F3E444}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="Group" UID="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="TextControls" UID="{B23312F7-CD7E-4850-AE6A-3CEB193B8D08}" Desc="Text-based Controls" Group="" Image="TextGrp.bmp" Virtual="true" Parentage="2" Base="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="BitmapControls" UID="{AAC3C40F-CF68-424b-9FC9-60D9003399E1}" Desc="Bitmap-based Controls" Group="" Image="BitmapGrp.bmp" Virtual="true" Parentage="2" Base="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="SliderControls" UID="{E65FA189-38E7-4219-9747-7D21CFA82320}" Desc="Slider-based Controls" Group="" Image="SliderGrp.bmp" Virtual="true" Parentage="2" Base="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="LongValueControls" UID="{DEE82CA6-2863-4120-B988-473CAE4E91A7}" Desc="Numeric Controls" Group="" Image="LongValueGrp.bmp" Virtual="true" Parentage="2" Base="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="TimingControls" UID="{BCFC600E-6B6C-4bd5-B70B-47EBACE2CD8C}" Desc="Timing Controls" Group="" Image="TimingGrp.bmp" Virtual="true" Parentage="2" Base="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="FrameControls" UID="{6BC76769-CD2C-44b2-B15F-B9A9C7D48E3F}" Desc="Frames and rectangles" Group="" Image="FrameGrp.bmp" Virtual="true" Parentage="2" Base="{9744B4B9-AB6E-4eba-96E6-B6886F502DD1}">
+<Properties/>
+<Actions/>
+</Class>
+<Class Name="Thread" UID="{DA0AE742-C2A6-45d0-888B-B21FD3D5A9ED}" Group="" Image="" Virtual="false" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Configuration" Type="osd_object_flags">
+<OsdObjectFlags MustBeTopmost="false" CanBeTopmost="false" IsState="false" GenerateControlData="false" CanBeIntersected="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="CreationScript" Type="creation_script">
+<CreationScript>&lt;CreateObject ClassName = &quot;TopMostState&quot;/&gt;</CreationScript>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="OrderForTileIdGeneration" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="TimerObject" UID="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Timer" UID="{BB894056-60B1-4a61-8E5F-F245232D1E2B}" Group="" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Reset" UID="{2EF9C462-2350-45bb-98B6-05EB98EFCCEA}">
+<Variable Name="Value" Type="ulong">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Clear" UID="{985351B8-8253-493f-AFAC-3230CB43B027}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysTimer" UID="{DDBB1AA4-4F67-4913-87C2-22822F2C1B0B}" Group="" Image="" Virtual="false" Parentage="0" Base="{9E1961BF-6C2E-4b51-9A7F-6A6117AF04AB}">
+<Properties>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="RamObject" UID="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}" Group="" Image="" Virtual="true" Parentage="0">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="SubStructure" UID="{2A19A2A0-890F-4f62-A2C8-9730C96D91D3}" Group="" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Structure" UID="{97B8974E-D814-4dff-B506-0C02120D5A02}" Group="" Image="" Virtual="false" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="GenerateValues" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="FactoryDefaultInRom" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="RamType" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Variable" UID="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}" Group="" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarByte" UID="{FA4CBCDA-8099-44ed-BE26-B2E191A2D269}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarSByte" UID="{B503F7D2-C0DE-4ebb-88BA-82749D537771}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarWord" UID="{0FD50741-FE2E-4d27-99E5-736C78498532}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="VarSWord" UID="{6897E8A3-0F7C-47c2-9E18-9CBD2A025A52}" Group="" Image="" Virtual="false" Parentage="0" Base="{98F5F3BD-E00E-4a59-ACBC-A69C4EECB42F}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+</Properties>
+<Actions/>
+</Class>
+<Class Name="Adjuster" UID="{D04AA833-0DA9-4e4b-A893-999539023C41}" Group="" Image="" Virtual="true" Parentage="0" Base="{B63B776C-FCFF-4932-9FA7-36153BF57C3A}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjByte" UID="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{88E1D9C6-0670-47a7-8F5A-60AFD8A95349}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjByte" UID="{D398D6CA-5252-446c-8552-0521DDDFECDC}" Group="" Image="" Virtual="false" Parentage="0" Base="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{7469B5AD-8BD4-4f6e-B79A-5D037854C2F8}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramSysAdjByte" UID="{7ABFD599-B012-433f-9E43-ED1A81C3D338}" Group="" Image="" Virtual="false" Parentage="2" Base="{D398D6CA-5252-446c-8552-0521DDDFECDC}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{A1E66B8B-BC98-4aaa-BD5E-5E25E20B30C6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{A359BC1A-8ED8-4402-87CA-93A7B2F4C395}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{20C375E9-D07A-40d9-8234-4BBDE3035173}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{61035EB9-4480-443c-840D-1B505BAC32B6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{6FEF555E-EEEB-4680-9271-7A59FCAC7FEE}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramAdjByte" UID="{1BDA2BFF-B735-4603-BD16-30270B1BB3C3}" Group="" Image="" Virtual="false" Parentage="2" Base="{39D4F3E6-07D9-4c0b-B032-34F77C6BF304}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="byte">
+<SimpleValueArray Value="255"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{22D39336-924A-4df3-89CF-8CF6AC0E0007}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{3C8BF9A8-EAEB-438f-828A-84FB8A832961}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{2F7ED759-0DC1-442e-A2A5-621622D39351}">
+<Variable Name="Value" Type="byte">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{F84BB649-1A0B-4452-A7A3-7BA106108131}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{4D3E5DA8-6424-4ca5-A101-72ACB9499DF5}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjSByte" UID="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{56270514-D4BF-4254-8712-BB86C9F09F8C}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjSByte" UID="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}" Group="" Image="" Virtual="false" Parentage="0" Base="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{39373925-E7DF-4829-A958-52578C7C7D46}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramSysAdjSByte" UID="{1B3CEECF-6C66-4fb9-BC60-001171DB090F}" Group="" Image="" Virtual="false" Parentage="2" Base="{C8999F54-37CE-4806-AFBB-EE3D3AC5296C}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{CFA9CC8A-2145-4ded-A46B-FF1AC8BA1AE2}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{9E434C69-FD8D-4813-B2B5-A8DD1CF9567A}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{616D5986-5E62-4656-B48F-AF4C988BFDB2}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{1FD1FA78-54DC-490c-81A2-EA5CEDE97055}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{A9B439FC-8C08-47de-A0DC-082097E63CCD}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramAdjSByte" UID="{8C455958-9222-4707-B48C-97BC434C0307}" Group="" Image="" Virtual="false" Parentage="2" Base="{3FEA6C0C-EB23-434e-AE1E-0D20D32275B9}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="char">
+<SimpleValueArray Value="-128"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="char">
+<SimpleValueArray Value="127"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="char">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{37BF4177-D5C5-4809-902E-78BCCAE6DEB0}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{314670DE-DFCF-41ed-A211-AABFE4201618}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{D5A551B4-2D1D-4099-BE8E-355639020065}">
+<Variable Name="Value" Type="char">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{FBB4205C-6BA9-44ee-81F6-3DE4774FE429}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{F43F6497-DFD1-4762-9F63-BF66C3502A98}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjWord" UID="{1DEC549D-99CE-4af5-9102-87366948E77C}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{AAEDB08C-4923-4916-8C71-9DFF0CEB7155}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjWord" UID="{BCB4B081-E01E-40ef-944F-140EC37C9E76}" Group="" Image="" Virtual="false" Parentage="0" Base="{1DEC549D-99CE-4af5-9102-87366948E77C}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{CB8EB60E-5351-4176-9577-A8F74A9D6DB7}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramSysAdjWord" UID="{E038B7A0-F4BC-4fc2-BADA-47251A19514C}" Group="" Image="" Virtual="false" Parentage="2" Base="{BCB4B081-E01E-40ef-944F-140EC37C9E76}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{16194692-EDD6-42ac-AA9D-E8EB71181203}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{AB321E7D-2F76-460d-B567-E9DD8F2420AD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{E9B130D7-C759-4eab-BEFB-E6868A44D386}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{3F0E86CD-95EB-4520-A7B4-26FFCEEB9854}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{87F3852B-BE9D-44c8-A389-63E2BB170CBE}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramAdjWord" UID="{80E932CD-85E7-4ab0-9CAE-F2F8911B9E74}" Group="" Image="" Virtual="false" Parentage="2" Base="{1DEC549D-99CE-4af5-9102-87366948E77C}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="ushort">
+<SimpleValueArray Value="65535"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="ushort">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{5AB48CDA-5653-450d-A767-DAAE8235962C}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{C1282343-AE6D-406f-AEC6-340AB7F45D0B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{7187E0C9-54AE-4fb5-875C-E2299666E66F}">
+<Variable Name="Value" Type="ushort">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{1D722818-416F-41ec-BC9D-9E5805F7ABDD}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{2BCED95B-AE34-4a39-A380-8161C2913602}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="AdjSWord" UID="{E9A3327F-0383-4428-8072-88C55153EBEE}" Group="" Image="" Virtual="false" Parentage="0" Base="{D04AA833-0DA9-4e4b-A893-999539023C41}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{1D1574D8-B16A-4d58-9B64-3CF6790AC978}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="SysAdjSWord" UID="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}" Group="" Image="" Virtual="false" Parentage="0" Base="{E9A3327F-0383-4428-8072-88C55153EBEE}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{336C3197-B1D6-4c93-84AF-2251DE6D0EFB}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{949F7F71-5A77-4286-920E-941B3E56E3F4}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{C2AAF0CB-CC5B-4761-BC21-EC4C074BFF23}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramSysAdjSWord" UID="{29211B2D-5D38-417d-B2F4-D03C5BBC4F45}" Group="" Image="" Virtual="false" Parentage="2" Base="{F3810032-7F22-4980-8F3D-81F82F6BD5FD}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="true"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{7F1C9D4D-7E7F-4ff2-919E-5A096CA06176}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{E9A6FA9D-4BDB-4e20-8BB3-B8975C0E7270}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{38066C04-8F10-476d-A190-92315130A77D}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{8F44CD1C-8B63-4c70-BAA5-EBAA9324546B}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{C991A507-25CC-45fd-BB47-B6A42A2540DA}"/>
+</Action>
+</Actions>
+</Class>
+<Class Name="NvramAdjSWord" UID="{69E96343-283A-435c-963F-A1ABF10E66BF}" Group="" Image="" Virtual="false" Parentage="2" Base="{E9A3327F-0383-4428-8072-88C55153EBEE}">
+<Properties>
+<Property User="true">
+<Variable Name="Desc" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Shortcut" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="AdjFunction" Type="string">
+<SimpleValueArray Value=""/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Cyclic" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Permanent" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Unsigned" Type="bool">
+<SimpleValueArray Value="false"/>
+</Variable>
+</Property>
+<Property>
+<Variable Name="Size" Type="byte">
+<SimpleValueArray Value="2"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Min" Type="short">
+<SimpleValueArray Value="-32768"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Max" Type="short">
+<SimpleValueArray Value="32767"/>
+</Variable>
+</Property>
+<Property User="true">
+<Variable Name="Step" Type="short">
+<SimpleValueArray Value="1"/>
+</Variable>
+</Property>
+</Properties>
+<Actions>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="IncrementAdjuster">
+<Function-Object Name="Increment" UID="{FFF771D6-F82A-4201-A161-AE266E37D3BA}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="DecrementAdjuster">
+<Function-Object Name="Decrement" UID="{223A481C-9147-46ad-BC6F-17378271B82F}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="">
+<Function-Object Name="Set" UID="{FD180BD1-B4DB-452a-9F4C-D0C1BE7FFB52}">
+<Variable Name="Value" Type="short">
+<SimpleValueArray Value="0"/>
+</Variable>
+</Function-Object>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="SaveAdjuster">
+<Function-Object Name="Save" UID="{1E775FDC-8E6C-4e26-9F21-E3E2E2D21FE6}"/>
+</Action>
+<Action Scope2="2" Priority="0" AutoCreationIntoParent="false" Alias="RetrieveAdjuster">
+<Function-Object Name="Retrieve" UID="{9954886F-7717-4996-873A-99966426CFED}"/>
+</Action>
+</Actions>
+</Class>
+</Entries>
+</Classes>
+</osd>
+<ConfigMgr>
+<Configurations Active="Default">
+<Configuration Name="Default">
+<Configs>
+<CodeGenerator>
+<Configs>
+<Reports>
+<Configs/>
+<ReportTops>
+<Controls>
+<Reports>
+<CLUT Status="true"/>
+<DetailReport Status="true"/>
+<MemMap Status="true"/>
+<StateActionTable Status="true"/>
+<StateResources Status="true"/>
+</Reports>
+</Controls>
+<GlyphTables>
+<Reports>
+<GlyphTable Status="true"/>
+</Reports>
+</GlyphTables>
+<Miscellaneous>
+<Reports>
+<ROMSizes Status="true"/>
+<Summary Status="true"/>
+</Reports>
+</Miscellaneous>
+</ReportTops>
+<ConfigReports-Path Value=".\Reports"/>
+</Reports>
+<BuildConditions>
+<Configs/>
+<BuildConditionStatusMap/>
+</BuildConditions>
+<State_Machine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="4"/>
+</Params>
+</State_Machine>
+<Adjuster_Engine>
+<Configs/>
+<Params>
+<Param QualifiedName="Version" Type="enum" Value="4"/>
+</Params>
+</Adjuster_Engine>
+<Timer>
+<Configs/>
+<Params>
+<Param QualifiedName="Resolution" Type="enum" Value="1.00"/>
+</Params>
+</Timer>
+<Keystrokes>
+<Configs/>
+<Params>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State Before" Type="enum" Value="false"/>
+<Param QualifiedName="Same state's keys conflict validation.Allow different time.State After" Type="enum" Value="false"/>
+</Params>
+</Keystrokes>
+<Osd>
+<Configs/>
+<Params>
+<Param QualifiedName="Unicode.Enable UNISCRIBE script" Type="enum" Value="true"/>
+<Param QualifiedName="Rotation.Enable" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Force Tile Color Depth" Type="enum" Value="false"/>
+<Param QualifiedName="Bitmap Controls.Firmware Buffer Size" Type="enum" Value="1024"/>
+<Param QualifiedName="Tile Controls.Allocation" Type="enum" Value="Memory efficient"/>
+<Param QualifiedName="Tile Controls.Tile Id Allocation" Type="enum" Value="Automatic"/>
+<Param QualifiedName="SDRam.Start" Type="int" Value="0"/>
+<Param QualifiedName="SDRam.Size" Type="int" Value="800000"/>
+<Param QualifiedName="Text Controls.Compression.Enable" Type="enum" Value="true"/>
+<Param QualifiedName="Color Space" Type="enum" Value="RGB"/>
+</Params>
+</Osd>
+</Configs>
+<GenerationConfig-Path Value=".\GenFiles"/>
+</CodeGenerator>
+</Configs>
+</Configuration>
+</Configurations>
+</ConfigMgr>
+<Documents/>
+</Genesis-Workbench-Project>

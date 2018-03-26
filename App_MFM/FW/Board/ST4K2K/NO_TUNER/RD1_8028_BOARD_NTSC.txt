@@ -1,0 +1,196 @@
+MasterListEntries=	34
+ChipID=			FLI326xx
+# isGlitchOnSvideo=	YES
+
+# First line of any input file must include the above line to specify the total number of entries
+# the user wants to have in their masterlist. This number will be checked with the total entries
+# listed in this file.
+
+# If the High Speed Enable feature is availabe, the SECOND line of any input file must
+# state the revision (REV1 or REV2) by having 'featureHighSpeedEn = 	REV1' or
+# 'featureHighSpeedEn = 	REV2'.
+# Note that REV1 is Torino, and REV2 is Chaplin
+
+# Thus if the project is Chaplin, the SECOND line of any input file MUST state so
+# by having the 'featureHighSpeedEn=	REV2' line
+
+# When SCART connector is used, and there may possibly be a conflict, where the glitch will occur
+# between either swich from Cvbs to Svideo, or from Cvbs to Overlay. Where the glitch is to
+# occur must be indicated on the THIRD line. If nothing is indicated, and there is a conflict
+# then the default would have isGlitchOnSvideo to be flase, meaning glitch will occur on 
+# the switch to overlay.
+
+# Comments begins with '#' sign, which can be placed at the beginning of the line only.
+# Comments and blank lines are ignored by the parser.
+# All entries are case sensitive, fields should be in upper case
+
+######################################_RF_#########################################
+AllBoards:	ALL_BOARDS_RF1		notUsed
+
+AllBoards:	ALL_BOARDS_RF2		notUsed
+
+######################################_CVBS_##########################################
+# AllBoards field will generate the master list enumeration. This field is user defined.
+AllBoards:	ALL_BOARDS_CVBS1
+
+# User can define the names of the connectors
+Name: 		CVBS1
+
+# The connector type can be: TUNER, SVIDEO, COMPOSITE, COMPONENT, VGA, OVERLAY, SLAVE, DVI, or HDMI
+ConnectorType: 	COMPOSITE
+
+# The signal type can be: SIG_COMPOSITE, SIG_TUNER_COMPOSITE, SIG_SVIDEO,
+# SIG_COMPONENT, SIGN_VGA, SIG_OVL_TYPE1, SIG_OVL_TYPE2, SIG_OVL_TYPE3, or SIG_DVI
+SignalType: 	SIG_COMPOSITE
+
+# Processing type can be INTERNAL or EXTERNAL.
+ProcType: 	INTERNAL 
+
+# There are three types of processing port, AIP, DIP and DVI_PORT
+ProcPort: 	AIP
+
+# The connector pins (R/Y/C, G/CVBS/Pb, B/Pr, etc.) are predefined, 
+# therefore order of pins matter
+# Available AIP pins include: AIP_A1 to AIP_A4, AIP_B1 to AIP_B4, AIP_C1 to AIP_C4, AIP_SV1 to AIP_SV4
+Pins: 		AIP_B1
+
+# Specifies if the pin can be shared or not. Please enter YES or NO
+SharedPins: 	NO
+
+# Specifies the Audio Input Type. 
+# Options for this input are:  AUDIO_NOT_USED, RF_MODULATED_AUDIO, BASEBAND_AUDIO, 
+# SPDIF_AUDIO, I2S_AUDIO, VGA1, AND HDMI_AUDIO
+AudioType:	BASEBAND_AUDIO
+
+# Specifies the pin used for the audio input.
+# Options for this input are: SIF1, SIF2, BASEBAND_MUX_IN1,BASEBAND_MUX_IN2,BASEBAND_MUX_IN3,
+# BASEBAND_MUX_IN4,BASEBAND_MUX_IN5,BASEBAND_MUX_MONO, SPDIF_IN, I2S_IN1, I2S_IN2, HDMI_IN.
+AudioInputPin:	BASEBAND_MUX_IN1
+
+AllBoards:	ALL_BOARDS_CVBS2	notUsed
+
+AllBoards:	ALL_BOARDS_CVBS3	notUsed
+
+######################################_SVIDEO_#########################################
+
+AllBoards:	ALL_BOARDS_SVIDEO1
+Name: 		SVIDEO1
+ConnectorType: 	SVIDEO
+SignalType: 	SIG_SVIDEO
+ProcType: 	INTERNAL 
+ProcPort: 	AIP
+Pins: 		AIP_C4,AIP_B4
+SharedPins: 	NO
+AudioType:	BASEBAND_AUDIO
+AudioInputPin:	BASEBAND_MUX_IN3
+
+AllBoards:	ALL_BOARDS_SVIDEO2	notUsed
+
+AllBoards:	ALL_BOARDS_SVIDEO3	notUsed
+
+######################################_COMP_###########################################
+
+AllBoards:	ALL_BOARDS_COMP1
+Name: 		COMP1
+ConnectorType: 	COMPONENT
+SignalType: 	SIG_COMPONENT
+ProcType: 	INTERNAL 
+ProcPort: 	AIP
+
+# Pins in the order of YPrPb
+Pins: 		AIP_A2,AIP_B2,AIP_C2
+
+SharedPins: 	NO
+AudioType:	BASEBAND_AUDIO
+AudioInputPin:	BASEBAND_MUX_IN4
+
+AllBoards:	ALL_BOARDS_COMP2	notUsed
+
+AllBoards:	ALL_BOARDS_COMP3	notUsed
+
+#######################################_SCART_###########################################
+
+AllBoards:	ALL_BOARDS_SIG1_SCART1  notUsed
+AllBoards:	ALL_BOARDS_SIG2_SCART1  notUsed
+AllBoards: 	ALL_BOARDS_SIG3_SCART1  notUsed
+AllBoards: 	ALL_BOARDS_SIG4_SCART1  notUsed
+AllBoards:	ALL_BOARDS_SIG1_SCART2  notUsed
+AllBoards:	ALL_BOARDS_SIG2_SCART2  notUsed
+AllBoards: 	ALL_BOARDS_SIG3_SCART2	notUsed
+AllBoards: 	ALL_BOARDS_SIG4_SCART2	notUsed
+AllBoards: 	ALL_BOARDS_SIG1_SCART3	notUsed
+AllBoards: 	ALL_BOARDS_SIG2_SCART3	notUsed
+AllBoards: 	ALL_BOARDS_SIG3_SCART3	notUsed
+AllBoards: 	ALL_BOARDS_SIG4_SCART3	notUsed
+
+#######################################_VGA_###########################################
+
+AllBoards:	ALL_BOARDS_VGA1
+Name: 		VGA1
+ConnectorType: 	VGA
+SignalType: 	SIG_VGA
+ProcType: 	INTERNAL
+ProcPort: 	AIP
+
+# Pins in the order of RGB
+Pins: 		AIP_CHSP,AIP_BHSP,AIP_AHSP
+
+SharedPins: 	NO
+AudioType:	BASEBAND_AUDIO
+AudioInputPin:	BASEBAND_MUX_IN2
+
+AllBoards:	ALL_BOARDS_VGA2		notUsed
+
+AllBoards:	ALL_BOARDS_DVI1		notUsed
+
+AllBoards:	ALL_BOARDS_DIP1		notUsed
+
+########################################_HDMI_##########################################
+
+# HDMI ports can be entered:  DVIConfig can be for HDMI_MUX_IN1 or HDMI_MUX_IN2
+AllBoards:	ALL_BOARDS_HDMI
+Name: 		HDMI1
+ConnectorType: 	HDMI
+SignalType: 	SIG_DVI
+ProcType: 	INTERNAL
+ProcPort: 	DVI_PORT
+SharedPins: 	NO
+DVIConfig:	HDMI_MUX_IN1
+AudioType:	HDMI_AUDIO
+AudioInputPin:	HDMI_IN
+
+AllBoards:	ALL_BOARDS_HDMI2
+Name: 		HDMI2
+ConnectorType: 	HDMI
+SignalType: 	SIG_DVI
+ProcType: 	INTERNAL
+ProcPort: 	DVI_PORT
+SharedPins: 	NO
+DVIConfig:	HDMI_MUX_IN2
+
+# DVI uses baseband
+AudioType:	BASEBAND_AUDIO
+AudioInputPin:	BASEBAND_MUX_IN5
+
+AllBoards:	ALL_BOARDS_HDMI3  notUsed
+
+#################################_NOT_USED_SECTION_#######################################
+
+# If AllBoards field exists but there is no details of the connector after this field, 
+# then the connector will be classified as NOT USED.
+# All the not used entries should be grouped and put to the end of the file. Though it
+# seems that most inputs not sorted by used and not used, but by input. Order of input
+# does affect the order outputed.
+# User can put a flag at the end of the line to indicate it is not used, flag will be ignored by parser
+
+AllBoards:	ALL_BOARDS_DP1 		notUsed
+
+AllBoards:	ALL_BOARDS_DP2 		notUsed
+
+####################################NOT_USED_SLAVE#######################################
+
+# Please enter all not used SLAVEs after NOT USED entry. This is important for the WB to work.
+# Otherwise, the SLAVE entry can be placed at the top.
+AllBoards:	NOT_USED
+
+AllBoards:		ALL_BOARDS_SLAVE1

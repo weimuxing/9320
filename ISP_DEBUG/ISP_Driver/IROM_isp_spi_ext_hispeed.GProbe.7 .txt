@@ -1,0 +1,55 @@
+// Batch file to Program a Cortez, Cortez Advanced Application in Real Mode 
+// ... onto a serial SPI flash device
+//
+// The following devices has been tested in Extended mode
+//
+//Connect PROTOCOL=SERIAL1;PORT=COM1;SPEED=115200
+Connect "DEVICE=FTDI Serial;PROTOCOL=SERIAL1;PORT=COM5;SPEED=115200"
+
+debugon
+//SetBuffer 0x6000 4096
+//Reset 0
+
+//write protection for RD1 board
+0xC9F6=0x3000
+0xCA02=0x3000
+0xCA26=0x2000
+
+delay 500
+RAMWrite Isp_spi_ext_hispeed.hex
+
+run 0x900
+
+//appstest 10 1 100			// FLASH/BANK "A" is selected and assigned tag is "100"
+//appstest 10 2 99			// FLASH/BANK "B" is selected and assigned tag is "99"
+
+delay 1000
+
+Connect "DEVICE=FTDI Serial;PROTOCOL=SERIAL1;PORT=COM5;SPEED=480000"
+
+FLASHID
+
+//appstest 12                // Force "FlashErase" to be "chip erase".
+appstest 16 0x00000 16       // Reserved space start at 0x00000 with 16 times 4K-bytes
+
+// if not an MXIC chip is used the delay can be reduced up to 3000
+setDelay 80000
+FlashErase
+
+//setDelay 3000
+
+//fastFlashWrite C:\CVS\Athena\App_MFM\FW\OBJECT_EXT\AthenaRd3_RC0.hex
+//fastFlashWrite C:\CVS\Athena\App_MFM\FW\OBJECT_EXT\AthenaRd3_RC0.bin 0x400000
+fastFlashWrite ..\HexBin\AthenaRd1_RC0.hex
+
+
+appstest 11						// update tag to selected flash
+
+//flashread 0x10000 32
+//flashread 0x210000 32
+//flashread 0x410000 32
+
+reset 1
+
+Connect "DEVICE=FTDI Serial;PROTOCOL=SERIAL1;PORT=COM5;SPEED=115200"
+
